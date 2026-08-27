@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
   "updated_at": "2026-08-27",
-  "notes": "Historical entries were backfilled from the existing ChatGPT literary-cat series. Future runs should append one record only after the corresponding entry file is written successfully.",
+  "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
-    {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Cheshire Cat","aliases":["柴郡猫"],"work":"Alice's Adventures in Wonderland","work_zh":"《爱丽丝梦游仙境》","author":"Lewis Carroll","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Unnamed cat","aliases":["无名猫","吾辈"],"work":"I Am a Cat","work_zh":"《我是猫》","author":"Natsume Sōseki","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Kater Murr","aliases":["穆尔猫"],"work":"The Life and Opinions of the Tomcat Murr","work_zh":"《雄猫穆尔的人生观》","author":"E. T. A. Hoffmann","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Pluto","aliases":["普路托"],"work":"The Black Cat","work_zh":"《黑猫》","author":"Edgar Allan Poe","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Tobermory","aliases":["托伯莫里"],"work":"Tobermory","work_zh":"《托伯莫里》","author":"Saki","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Macavity","aliases":["麦卡维蒂"],"work":"Old Possum's Book of Practical Cats","work_zh":"《老负鼠的猫经》","author":"T. S. Eliot","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Simpkin","aliases":["辛普金"],"work":"The Tailor of Gloucester","work_zh":"《格洛斯特的裁缝》","author":"Beatrix Potter","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Greebo","aliases":[],"work":"Discworld series","work_zh":"“碟形世界”系列","author":"Terry Pratchett","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Mog","aliases":["莫格"],"work":"Mog the Forgetful Cat","work_zh":"《健忘猫莫格》","author":"Judith Kerr","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Crookshanks","aliases":["克鲁克山"],"work":"Harry Potter series","work_zh":"“哈利·波特”系列","author":"J. K. Rowling","introduced_date":null,"entry_path":null,"source":"historical_backfill"},
-    {"canonical_name":"Snowbell","aliases":["雪球"],"work":"Stuart Little","work_zh":"《精灵鼠小弟》","author":"E. B. White","introduced_date":null,"entry_path":null,"source":"historical_backfill"}
+    {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Cheshire Cat","aliases":["柴郡猫"],"work":"Alice's Adventures in Wonderland","work_zh":"《爱丽丝梦游仙境》","author":"Lewis Carroll","introduced_date":"2026-08-16","entry_path":"entries/2026-08-16-cheshire-cat.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Wagahai","aliases":["Unnamed cat","无名猫","吾辈","わがはい","吾輩"],"work":"I Am a Cat","work_zh":"《我是猫》","author":"Natsume Sōseki","introduced_date":"2026-08-17","entry_path":"entries/2026-08-17-wagahai.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Kater Murr","aliases":["Murr","穆尔猫"],"work":"The Life and Opinions of the Tomcat Murr","work_zh":"《雄猫穆尔的人生观》","author":"E. T. A. Hoffmann","introduced_date":"2026-08-18","entry_path":"entries/2026-08-18-kater-murr.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Pluto","aliases":["普路托"],"work":"The Black Cat","work_zh":"《黑猫》","author":"Edgar Allan Poe","introduced_date":"2026-08-19","entry_path":"entries/2026-08-19-pluto.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Tobermory","aliases":["托伯莫里"],"work":"Tobermory","work_zh":"《托伯莫里》","author":"Saki","introduced_date":"2026-08-20","entry_path":"entries/2026-08-20-tobermory.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Macavity","aliases":["麦卡维蒂"],"work":"Old Possum's Book of Practical Cats","work_zh":"《老负鼠的猫经》","author":"T. S. Eliot","introduced_date":"2026-08-21","entry_path":"entries/2026-08-21-macavity.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Simpkin","aliases":["辛普金"],"work":"The Tailor of Gloucester","work_zh":"《格洛斯特的裁缝》","author":"Beatrix Potter","introduced_date":"2026-08-22","entry_path":"entries/2026-08-22-simpkin.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Greebo","aliases":[],"work":"Discworld series","work_zh":"“碟形世界”系列","author":"Terry Pratchett","introduced_date":"2026-08-23","entry_path":"entries/2026-08-23-greebo.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Mog","aliases":["莫格"],"work":"Mog the Forgetful Cat","work_zh":"《健忘猫莫格》","author":"Judith Kerr","introduced_date":"2026-08-24","entry_path":"entries/2026-08-24-mog.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Crookshanks","aliases":["克鲁克山"],"work":"Harry Potter series","work_zh":"“哈利·波特”系列","author":"J. K. Rowling","introduced_date":"2026-08-25","entry_path":"entries/2026-08-25-crookshanks.md","source":"rewritten_historical_backfill"},
+    {"canonical_name":"Snowbell","aliases":["雪球"],"work":"Stuart Little","work_zh":"《精灵鼠小弟》","author":"E. B. White","introduced_date":"2026-08-26","entry_path":"entries/2026-08-26-snowbell.md","source":"rewritten_historical_backfill"}
   ]
 }
