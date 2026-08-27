@@ -1,5 +1,8 @@
 # 今天的文学猫角色：Cheshire Cat（柴郡猫）
 
+![约翰·坦尼尔笔下树上的柴郡猫](../assets/cheshire-cat/01.jpg)
+![柴郡猫悬在王室上方的笑脸](../assets/cheshire-cat/02.webp)
+
 柴郡猫出自刘易斯·卡罗尔的《爱丽丝梦游仙境》。原作对它的毛色没有作出明确规定，但给了几个非常鲜明的身体特征：它是一只“大猫”，总是咧着嘴笑，长着很长的爪子和许多牙齿。约翰·坦尼尔为初版小说绘制的经典黑白插图，则把它画成一只体格厚实、带条纹感的猫，这一视觉形象后来影响极大。至于迪士尼动画里粉紫相间、条纹鲜艳的柴郡猫，则属于二十世纪改编重新建立的色彩形象，并不是卡罗尔文本中的设定。
 
 爱丽丝第一次在公爵夫人的厨房里见到它时，就被那种“从一只耳朵笑到另一只耳朵”的表情吸引。离开厨房后，柴郡猫又出现在树林中，为爱丽丝指路，却用一连串看似绕弯、其实逻辑严密的话告诉她：如果不知道自己想去哪里，那么走哪条路都没有区别。它还断言仙境里的人全都疯了，包括爱丽丝，也包括它自己。
@@ -10,8 +13,15 @@
 
 ### 视觉参考
 
-![约翰·坦尼尔笔下的柴郡猫](https://upload.wikimedia.org/wikipedia/commons/1/1e/Cheshire_Cat_Tenniel.png)
-
-- 参考形象：约翰·坦尼尔为《爱丽丝梦游仙境》早期版本绘制的柴郡猫，是后来最重要的经典视觉来源之一。
-- 来源：[Wikimedia Commons：Cheshire Cat Tenniel](https://commons.wikimedia.org/wiki/File:Cheshire_Cat_Tenniel.png)
-- 授权：公版（Public Domain）。
+1. 约翰·坦尼尔笔下树上的柴郡猫
+   - 本地文件：`../assets/cheshire-cat/01.jpg`
+   - 来源页面：https://www.pinterest.com/pin/677158493950726668/
+   - 原始图片：https://i.pinimg.com/originals/54/d0/54/54d05410e8bc91786f7da6ce079cc4ac.jpg
+   - 作者/机构：John Tenniel
+   - 说明：经典初版插画体系
+2. 柴郡猫悬在王室上方的笑脸
+   - 本地文件：`../assets/cheshire-cat/02.webp`
+   - 来源页面：https://www.fineartstorehouse.com/magical-world-illustration/palmer-illustrated-collection/cheshire-cat-smiling-king-queen-alice-21177459.html
+   - 原始图片：https://www.fineartstorehouse.com/p/629/cheshire-cat-smiling-king-queen-alice-21177459.jpg.webp
+   - 作者/机构：John Tenniel
+   - 说明：突出其身体消失、只剩头部与笑容的经典场景

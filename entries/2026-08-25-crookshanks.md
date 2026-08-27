@@ -1,5 +1,8 @@
 # 今天的文学猫角色：Crookshanks（克鲁克山）
 
+![电影《阿兹卡班的囚徒》中的克鲁克山](../assets/crookshanks/01.jpg)
+![赫敏怀抱克鲁克山的电影画面](../assets/crookshanks/02.png)
+
 克鲁克山出自 J. K. 罗琳的“哈利·波特”系列，在《哈利·波特与阿兹卡班的囚徒》中成为赫敏·格兰杰的宠物。原作给它的外貌非常具体：姜黄色的毛又厚又蓬松，四条腿略微向外弯，脸显得暴躁而且异常扁平，仿佛迎面撞上了一堵砖墙。它还有一条非常蓬松的尾巴。电影版沿用了这些核心特征，把它塑造成一只毛量很大的橘色长毛猫，因此银幕形象与小说的视觉印象相当接近。
 
 赫敏在对角巷的神奇动物商店买下克鲁克山后，它立刻与罗恩的宠物鼠斑斑势不两立。起初，这看起来只是最普通的“猫追老鼠”，罗恩也因此认定它是一只讨厌的恶猫。但故事后来揭示，斑斑根本不是普通老鼠，而是小矮星彼得以阿尼马格斯形态隐藏多年。克鲁克山几乎从一开始就察觉到了异常。
@@ -12,8 +15,15 @@
 
 ### 视觉参考
 
-![电影版中的 Crookshanks](https://i.pinimg.com/736x/94/9d/21/949d215b99e30e8abf7696909d8e5d6f--harry-harry-hermione-granger.jpg)
-
-- 参考形象：电影版延续了原作“巨大、姜黄色、毛发蓬松、扁脸”的核心特征。
-- 权威角色资料：[Official Harry Potter Encyclopedia：Crookshanks](https://www.harrypotter.com/fact-file/characters-and-pets/crookshanks)
-- 说明：影视剧照版权归相应权利方所有；仓库仅保留远程引用与权威来源页面。
+1. 电影《阿兹卡班的囚徒》中的克鲁克山
+   - 本地文件：`../assets/crookshanks/01.jpg`
+   - 来源页面：https://www.harrypotter.com/features/influential-cats-of-the-wizarding-world
+   - 原始图片：https://contentful.harrypotter.com/usf1vwtuqyxm/1VewXrez2U26IIaOUOm0Uo/9257ef81ac9e419a0ec9560d5b50fa8f/WB_F3_Crookshanks_SOLOcrop_C240_51_UP_HPE3.jpg
+   - 作者/机构：Warner Bros. / Harry Potter official site
+   - 说明：官方影视形象，突出姜黄色长毛和扁脸
+2. 赫敏怀抱克鲁克山的电影画面
+   - 本地文件：`../assets/crookshanks/02.png`
+   - 来源页面：https://www.seventeen.com/celebrity/movies-tv/news/a39240/this-crazy-harry-potter-fan-theory-claims-that-crookshanks-is-actually-harrys-cat/
+   - 原始图片：https://sev.h-cdn.co/assets/16/13/768x432/hd-aspect-1459349193-imagcse12.png
+   - 作者/机构：Warner Bros. film still
+   - 说明：展示克鲁克山与赫敏的体型关系和蓬松毛量

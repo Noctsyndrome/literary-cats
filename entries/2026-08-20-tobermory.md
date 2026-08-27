@@ -1,5 +1,8 @@
 # 今天的文学猫角色：Tobermory（托伯莫里）
 
+![现代版本中的托伯莫里形象](../assets/tobermory/01.jpg)
+![托伯莫里有声书封面的古典猫形象](../assets/tobermory/02.jpg)
+
 托伯莫里出自萨基（Saki，本名 H. H. Munro）的短篇小说《Tobermory》。很特别的一点是，原作几乎没有给这只猫规定明确的毛色或花纹。故事中反而会提到别的猫——例如马厩附近的一只玳瑁猫，以及教区牧师家一只体型很大的黄公猫——但托伯莫里自己的外貌始终没有被细致描述。因此，它没有像柴郡猫或普路托那样固定的“标准长相”；不同插画版本往往会各自发挥。
 
 真正让托伯莫里与众不同的不是样貌，而是语言。一个名叫 Cornelius Appin 的人经过多年实验，声称自己终于成功教会动物说人类语言，而托伯莫里就是第一个成果。起初，庄园里的客人只把这当作一场把戏；但当托伯莫里真的用冷静、准确、甚至有些傲慢的语气开口后，气氛立刻发生了变化。
@@ -12,8 +15,15 @@
 
 ### 视觉参考
 
-![现代插画中的托伯莫里](https://mir-s3-cdn-cf.behance.net/project_modules/disp/236f2e34184265.56c75be793048.jpg)
-
-- 参考形象：Eugenia Susel 依据萨基短篇《Tobermory》创作的现代插画。原作没有固定托伯莫里的毛色，因此这幅图只作为后世视觉想象的例子。
-- 来源：[Behance：Tobermory, de Saki](https://www.behance.net/gallery/34184265/Tobermory-de-Saki)
-- 说明：现代插画，版权归原作者所有；仓库仅保留远程引用与来源链接。
+1. 现代版本中的托伯莫里形象
+   - 本地文件：`../assets/tobermory/01.jpg`
+   - 来源页面：https://aliflaila.app/books/tobermory
+   - 原始图片：https://cdn.aliflaila.app/books/3954362594/cover_vVmsCYRBfwfM6hxjvDQ7BHtkv1bQliINLihHWPgj.jpg
+   - 作者/机构：Ali Flaila
+   - 说明：原作未规定毛色，因此作为后世视觉化参考
+2. 托伯莫里有声书封面的古典猫形象
+   - 本地文件：`../assets/tobermory/02.jpg`
+   - 来源页面：https://libro.fm/audiobooks/9781467667951-tobermory
+   - 原始图片：https://covers.libro.fm/9781467667951_1120.jpg
+   - 作者/机构：Libro.fm
+   - 说明：另一种后世视觉呈现，用于体现角色形象并无唯一标准
