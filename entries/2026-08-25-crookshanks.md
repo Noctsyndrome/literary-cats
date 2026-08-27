@@ -9,3 +9,11 @@
 后来补充设定将克鲁克山解释为猫与猫狸子（Kneazle）的混血。猫狸子是一种高度聪明、尤其善于辨认可疑人物的魔法生物，这恰好解释了克鲁克山异常敏锐的判断力。不过即使只读小说本身，它的聪明也已经非常明显：Sirius 直接称它为自己遇到过的最聪明的同类之一。
 
 故事结尾有一个很轻巧的细节。Sirius 送给罗恩一只小猫头鹰后，罗恩把新宠物拿给克鲁克山检查，认真问它这次是不是“真的只是一只猫头鹰”。克鲁克山闻了闻，满意地呼噜起来。经历了整部小说之后，那个曾经最不信任它的人，终于开始把这只扁脸橘猫当作可靠的鉴伪专家。
+
+### 视觉参考
+
+![电影版中的 Crookshanks](https://i.pinimg.com/736x/94/9d/21/949d215b99e30e8abf7696909d8e5d6f--harry-harry-hermione-granger.jpg)
+
+- 参考形象：电影版延续了原作“巨大、姜黄色、毛发蓬松、扁脸”的核心特征。
+- 权威角色资料：[Official Harry Potter Encyclopedia：Crookshanks](https://www.harrypotter.com/fact-file/characters-and-pets/crookshanks)
+- 说明：影视剧照版权归相应权利方所有；仓库仅保留远程引用与权威来源页面。
