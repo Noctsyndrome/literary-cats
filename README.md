@@ -23,4 +23,4 @@ If the GitHub write fails, the ChatGPT delivery may still proceed, but the respo
 
 ## Historical data
 
-The initial `characters.json` is backfilled from the literary-cat series that existed before this repository was created. Exact publication dates and entry paths are intentionally left blank for those historical records rather than guessed.
+The first twelve entries, covering the original run sequence from 2026-08-15 through 2026-08-26, were reconstructed and rewritten on 2026-08-27 so that the archive starts with the current editorial standard rather than preserving inconsistent early drafts. The duplicate Behemoth delivery on 2026-08-27 is not treated as a separate entry; its richer material was used when revising the original 2026-08-15 Behemoth article.
