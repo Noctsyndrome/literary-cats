@@ -19,7 +19,7 @@ jobs:
       - name: Download images and update entries
         run: |
           python - <<'PY'
-          import json, pathlib, re, urllib.request, urllib.error
+          import json, pathlib, re, urllib.request
 
           root = pathlib.Path('.')
           manifest = json.loads((root / 'data/image-backfill.json').read_text(encoding='utf-8'))
@@ -103,20 +103,21 @@ jobs:
               final = f'{title}\n\n{image_block}\n\n{rest.rstrip()}\n\n' + '\n'.join(refs) + '\n'
               md_path.write_text(final, encoding='utf-8')
 
+          error_file = root / 'data/image-backfill-errors.txt'
           if errors:
-              (root / 'data/image-backfill-errors.txt').write_text('\n'.join(errors) + '\n', encoding='utf-8')
+              error_file.write_text('\n'.join(errors) + '\n', encoding='utf-8')
               print('Backfill completed with errors:')
               print('\n'.join(errors))
           else:
-              p = root / 'data/image-backfill-errors.txt'
-              if p.exists(): p.unlink()
+              if error_file.exists():
+                  error_file.unlink()
               print('Backfill completed with no errors.')
           PY
       - name: Commit archived images
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets entries data/image-backfill-errors.txt 2>/dev/null || true
+          git add -A assets entries data
           if ! git diff --cached --quiet; then
             git commit -m 'Backfill local image assets for historical entries'
             git push
