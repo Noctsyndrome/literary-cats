@@ -7,3 +7,11 @@ E. T. A. 霍夫曼笔下的穆尔猫有一套非常具体、甚至颇为华丽�
 整部小说最巧妙的地方，在于穆尔的自传并不是完整地单独出现。按照书中的虚构出版说明，它写稿时拿了一部关于乐长约翰内斯·克莱斯勒的传记手稿当作吸墨和垫纸的废纸，结果印刷时两种稿件被混在了一起。于是读者一会儿读到穆尔洋洋自得的人生回忆，一会儿又突然进入敏感、复杂、充满艺术困境的克莱斯勒故事。两条叙事彼此打断，却又不断形成反照。
 
 这种结构让穆尔不只是“会写作的猫”。它代表了一种非常自信、非常完整的自我理解：它确信自己已经掌握了世界的规律，而小说另一半的克莱斯勒却始终处在矛盾、痛苦和无法安顿的状态里。一个自鸣得意的猫作家和一个真正困顿的艺术家被装订进同一本书，正是霍夫曼最精彩的文学玩笑之一。
+
+### 视觉参考
+
+![《雄猫穆尔的人生观》早期版本中的学者猫形象](https://etahoffmann.staatsbibliothek-berlin.de/wp-content/uploads/Katalog-Ponert-SBBamberg-Abb.167b-Kat.218_L.g.o.391b_Ebd.Vorderseite-Bd.1-Kater-Murr-eingeb_beschnitten-768x1017.jpg)
+
+- 参考形象：柏林国立图书馆 E. T. A. Hoffmann Portal 展示的《Kater Murr》早期书籍视觉资料，突出“执笔的学者猫”形象。
+- 来源：[E. T. A. Hoffmann Portal](https://etahoffmann.staatsbibliothek-berlin.de/leben-und-werk/literat/werkinterpretationen/)
+- 说明：这是早期出版视觉传统中的穆尔形象。
