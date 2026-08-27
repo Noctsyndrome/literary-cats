@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "slug": "behemoth",
+      "entry_path": "entries/2026-08-15-behemoth.md",
+      "images": [
+        {"caption":"2005年俄语电视剧中的贝格莫特","source_page":"https://theocrat.ru/kot-begemot.html","image_urls":["https://theocrat.ru/content/images/276/kot-begemot-4-27td.jpg"],"credit":"《大师和玛格丽特》2005电视改编","note":"经典影视形象参考"},
+        {"caption":"插画中的贝格莫特","source_page":"https://www.pinterest.com/pin/804525920923381141/","image_urls":["https://i.pinimg.com/736x/4b/9d/6e/4b9d6ed1a56e849606f56b52af5a08f0.jpg"],"credit":"网络流传插画","note":"与影视形象互补的拟人化视觉参考"}
+      ]
+    },
+    {
+      "slug": "cheshire-cat",
+      "entry_path": "entries/2026-08-16-cheshire-cat.md",
+      "images": [
+        {"caption":"约翰·坦尼尔笔下树上的柴郡猫","source_page":"https://www.pinterest.com/pin/677158493950726668/","image_urls":["https://i.pinimg.com/originals/54/d0/54/54d05410e8bc91786f7da6ce079cc4ac.jpg"],"credit":"John Tenniel","note":"经典初版插画体系"},
+        {"caption":"柴郡猫悬在王室上方的笑脸","source_page":"https://www.fineartstorehouse.com/magical-world-illustration/palmer-illustrated-collection/cheshire-cat-smiling-king-queen-alice-21177459.html","image_urls":["https://www.fineartstorehouse.com/p/629/cheshire-cat-smiling-king-queen-alice-21177459.jpg.webp"],"credit":"John Tenniel","note":"突出其身体消失、只剩头部与笑容的经典场景"}
+      ]
+    },
+    {
+      "slug": "wagahai",
+      "entry_path": "entries/2026-08-17-wagahai.md",
+      "images": [
+        {"caption":"《我是猫》企鹅版封面中的无名猫","source_page":"https://www.penguin.co.uk/books/458709/i-am-a-cat-by-soseki-natsume/9781529998542","image_urls":["https://cdn.penguin.co.uk/dam-assets/books/9781529998542/9781529998542-jacket-large.jpg"],"credit":"Penguin Books","note":"现代出版视觉形象"},
+        {"caption":"《我是猫》早期版本相关插画","source_page":"https://x.com/ninikatu/status/1203858229555429377","image_urls":["https://pbs.twimg.com/media/ELT2q1kVUAIGOy-.jpg"],"credit":"中村不折相关早期视觉资料","note":"用于补充作品早期视觉语境"}
+      ]
+    },
+    {
+      "slug": "kater-murr",
+      "entry_path": "entries/2026-08-18-kater-murr.md",
+      "images": [
+        {"caption":"穆尔猫执笔写作的经典卷首图","source_page":"https://etahoffmann.staatsbibliothek-berlin.de/leben-und-werk/literat/werkinterpretationen/","image_urls":["https://etahoffmann.staatsbibliothek-berlin.de/wp-content/uploads/Katalog-Ponert-SBBamberg-Abb.167b-Kat.218_L.g.o.391b_Ebd.Vorderseite-Bd.1-Kater-Murr-eingeb_beschnitten-768x1017.jpg"],"credit":"E. T. A. Hoffmann Portal / Staatsbibliothek zu Berlin","note":"强调穆尔作为“作家”的拟人化形象"},
+        {"caption":"Theodor Hosemann笔下的穆尔猫群像","source_page":"https://www.corriere.it/cultura/16_aprile_08/hoffmann-gatto-murr-33afbfb2-fd98-11e5-820b-500d9d51558a.shtml","image_urls":["https://images2.corriereobjects.it/methode_image/2016/04/08/Cultura/Foto%20Cultura%20-%20Trattate/09_HOSEMANN_MURR_1844-U430605845976557d-U43170546763225YzF-1224x916%40Corriere-Web-Sezioni-593x443.jpg"],"credit":"Theodor Hosemann","note":"1844年前后早期插画体系"}
+      ]
+    },
+    {
+      "slug": "pluto",
+      "entry_path": "entries/2026-08-19-pluto.md",
+      "images": [
+        {"caption":"《黑猫》的现代哥特风插画","source_page":"https://www.foliosociety.com/row/tales-of-mystery-and-imagination","image_urls":["https://www.foliosociety.com/tco-images/unsafe/2560x2560/filters%3Aupscale%28%29%3Afill%28white%29/https%3A/www.foliosociety.com/static/cms/media/TMIM_TALES_OF_MYSTERY_AND_IMAGINATION_ILLUSTRATION_05.jpg"],"credit":"The Folio Society","note":"用于呈现普路托在后世哥特视觉传统中的形象"},
+        {"caption":"奥布里·比亚兹莱为《黑猫》创作的插画","source_page":"https://flashbak.com/aubrey-beardsleys-sublime-and-sinister-illustrations-for-edgar-allan-poe-1894-386382/a-aubrey_beardsley_-_edgar_poe_the-black-cat/","image_urls":["https://flashbak.com/wp-content/uploads/2017/09/a-aubrey_beardsley_-_edgar_poe_The-Black-Cat.jpg"],"credit":"Aubrey Beardsley","note":"19世纪末经典黑白插画"}
+      ]
+    },
+    {
+      "slug": "tobermory",
+      "entry_path": "entries/2026-08-20-tobermory.md",
+      "images": [
+        {"caption":"现代版本中的托伯莫里形象","source_page":"https://aliflaila.app/books/tobermory","image_urls":["https://cdn.aliflaila.app/books/3954362594/cover_vVmsCYRBfwfM6hxjvDQ7BHtkv1bQliINLihHWPgj.jpg"],"credit":"Ali Flaila","note":"原作未规定毛色，因此作为后世视觉化参考"},
+        {"caption":"托伯莫里有声书封面的古典猫形象","source_page":"https://libro.fm/audiobooks/9781467667951-tobermory","image_urls":["https://covers.libro.fm/9781467667951_1120.jpg"],"credit":"Libro.fm","note":"另一种后世视觉呈现，用于体现角色形象并无唯一标准"}
+      ]
+    },
+    {
+      "slug": "macavity",
+      "entry_path": "entries/2026-08-21-macavity.md",
+      "images": [
+        {"caption":"Arthur Robins绘本版麦卡维蒂","source_page":"https://www.bookzters.com/products/macavity-the-mystery-cat","image_urls":["https://www.bookzters.com/cdn/shop/files/33_35bfcc42-43db-41a0-a065-8cb517f90750.jpg?v=1714698868"],"credit":"Arthur Robins","note":"现代绘本对角色的代表性视觉化"},
+        {"caption":"音乐剧《Cats》舞台上的麦卡维蒂","source_page":"https://www.pinterest.com/pin/513340057527652605/","image_urls":["https://i.pinimg.com/originals/01/92/5a/01925a931e2963d37a9ca6d2f3256c06.jpg"],"credit":"《Cats》舞台制作","note":"与原诗形象互补的经典舞台版本"}
+      ]
+    },
+    {
+      "slug": "simpkin",
+      "entry_path": "entries/2026-08-22-simpkin.md",
+      "images": [
+        {"caption":"碧雅翠丝·波特笔下在裁缝铺中的辛普金","source_page":"https://familychristmasonline.com/stories_other/potter/tailor/tailor.htm","image_urls":["https://familychristmasonline.com/stories_other/potter/tailor/7_simpkin.jpg"],"credit":"Beatrix Potter","note":"作者本人原始水彩插画"},
+        {"caption":"辛普金外出办事的拟人化形象","source_page":"https://russiskskolebergen.com/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8/%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8-2/%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B9-%D0%B8%D0%B7-%D0%B3%D0%BB%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B0/","image_urls":["https://i0.wp.com/skazkivcem.ucoz.ru/BeatrixPortnoy/the_tailor_of_gloucester_16.jpg"],"credit":"Beatrix Potter","note":"作者本人插画中较拟人化的一面"}
+      ]
+    },
+    {
+      "slug": "greebo",
+      "entry_path": "entries/2026-08-23-greebo.md",
+      "images": [
+        {"caption":"Paul Kidby绘制的Greebo全身像","source_page":"https://terrypratchett.com/explore-discworld/notable-cats-of-the-disc/","image_urls":["https://i0.wp.com/terrypratchett.com/management/wp-content/uploads/2022/12/greebo-kidby-lrg.jpg?resize=768%2C573&ssl=1"],"credit":"Paul Kidby / Terry Pratchett official site","note":"官方站点采用的代表性形象"},
+        {"caption":"Paul Kidby绘制的Greebo头像","source_page":"https://terrypratchett.com/book-categories/greebo/","image_urls":["https://i0.wp.com/terrypratchett.com/management/wp-content/uploads/2022/06/Greebo-kidby-scaled.jpg?resize=1000%2C1000&ssl=1"],"credit":"Paul Kidby / Terry Pratchett official site","note":"突出残耳、伤疤和异色眼等细节"}
+      ]
+    },
+    {
+      "slug": "mog",
+      "entry_path": "entries/2026-08-24-mog.md",
+      "images": [
+        {"caption":"朱迪思·克尔笔下莫格的经典封面形象","source_page":"https://www.childrensbooks.my/mog-forgetful-cat-judith-kerr-9780006640622","image_urls":["https://www.childrensbooks.my/7988-thickbox_default/mog-forgetful-cat-judith-kerr-9780006640622.jpg","https://i.harperapps.com/hcuk/covers/9780001955073/x450.JPG"],"credit":"Judith Kerr","note":"灰黑虎斑、白胸和圆眼的经典正面形象"},
+        {"caption":"《健忘猫莫格》内页中的莫格","source_page":"https://www.ebay.com/itm/146547912357","image_urls":["https://i.ebayimg.com/images/g/KgAAAeSwKo5oDmaG/s-l1200.jpg"],"credit":"Judith Kerr","note":"以故事场景补充封面之外的动态形象"}
+      ]
+    },
+    {
+      "slug": "crookshanks",
+      "entry_path": "entries/2026-08-25-crookshanks.md",
+      "images": [
+        {"caption":"电影《阿兹卡班的囚徒》中的克鲁克山","source_page":"https://www.harrypotter.com/features/influential-cats-of-the-wizarding-world","image_urls":["https://contentful.harrypotter.com/usf1vwtuqyxm/1VewXrez2U26IIaOUOm0Uo/9257ef81ac9e419a0ec9560d5b50fa8f/WB_F3_Crookshanks_SOLOcrop_C240_51_UP_HPE3.jpg"],"credit":"Warner Bros. / Harry Potter official site","note":"官方影视形象，突出姜黄色长毛和扁脸"},
+        {"caption":"赫敏怀抱克鲁克山的电影画面","source_page":"https://www.seventeen.com/celebrity/movies-tv/news/a39240/this-crazy-harry-potter-fan-theory-claims-that-crookshanks-is-actually-harrys-cat/","image_urls":["https://sev.h-cdn.co/assets/16/13/768x432/hd-aspect-1459349193-imagcse12.png"],"credit":"Warner Bros. film still","note":"展示克鲁克山与赫敏的体型关系和蓬松毛量"}
+      ]
+    },
+    {
+      "slug": "snowbell",
+      "entry_path": "entries/2026-08-26-snowbell.md",
+      "images": [
+        {"caption":"1999年电影《精灵鼠小弟》中的Snowbell","source_page":"https://cheezburger.com/43024901/20-iconic-cats-in-movies-that-made-the-big-screen-their-scratching-post","image_urls":["https://i.chzbgr.com/full/10570072576/hF22421AD/snowbell-stuart-little-1999"],"credit":"Columbia Pictures film still","note":"最广为人知的白色波斯猫银幕形象"},
+        {"caption":"《精灵鼠小弟2》中的Snowbell","source_page":"https://teleguide.info/film51779.html","image_urls":["https://img.teleguide.info/film/51/51779/10.jpg"],"credit":"Columbia Pictures film still","note":"另一部电影中的近景，补充脸型和毛发细节"}
+      ]
+    }
+  ]
+}
