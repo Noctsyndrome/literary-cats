@@ -6,7 +6,7 @@ A small archive for the daily ChatGPT series introducing cats that appear in lit
 
 - `data/characters.json` — persistent index of cats that have already been introduced. This is the primary source for deduplication.
 - `entries/` — one Markdown article per successful daily run, named `YYYY-MM-DD-slug.md`.
-- `assets/` — local image archive for visual references used by the series.
+- `assets/` — local image archive for the visual references used by each entry.
 
 ## Daily workflow
 
@@ -16,22 +16,26 @@ Each scheduled run should:
 2. Reject any candidate whose canonical name or alias already exists in the index.
 3. Research the character, prioritizing the original literary text for appearance details and supplementing with well-established illustrations or screen adaptations when useful.
 4. Generate the ChatGPT article using the fixed title format `今天的文学猫角色：角色名`.
-5. Save every visual reference actually used for the entry into `assets/<slug>/` whenever the source image can be retrieved, and use repository-relative Markdown image paths in the entry. The repository copy is the primary display resource; external URLs are provenance, not the rendering dependency.
-6. For each local image, preserve the original source page, direct image URL when available, creator/organization when known, and a short source note in the entry's `视觉参考` section.
-7. Save the complete article to `entries/YYYY-MM-DD-slug.md`.
-8. Only after the image assets and entry file are written successfully, append the new character record to `data/characters.json` and commit the update.
+5. Use two visual references by default. Prefer complementary images, such as an original/early illustration plus a classic screen or later authoritative visualization, or an overall portrait plus a second scene/version. Use fewer than two only when a genuinely useful second reference cannot be found.
+6. Save the image files under `assets/<slug>/` and reference them from the Markdown entry with repository-relative paths. Source URLs remain in the entry for provenance; local files are the primary display resources.
+7. Save the complete article to `entries/YYYY-MM-DD-slug.md`. The GitHub version may include a final `视觉参考` section containing the local image references and source/provenance links.
+8. Only after the entry file is written successfully, append the new character record to `data/characters.json` and commit the update.
 9. Deliver the same article body in ChatGPT.
 
-If an image cannot be retrieved or GitHub write fails, the ChatGPT delivery may still proceed, but the response should add an `额外说明` noting which archival step failed. The index must not be updated before the corresponding entry file has been created successfully.
+If the GitHub write fails, the ChatGPT delivery may still proceed, but the response should add an `额外说明` noting that archival or index update failed. The index must not be updated before the corresponding entry file has been created successfully.
 
 ## Visual references
 
-The archive follows a local-first strategy for stable display. Images used in the ChatGPT presentation should be copied into `assets/<slug>/` whenever technically retrievable, then referenced from the Markdown entry with relative paths such as `![说明](../assets/<slug>/image.jpg)`.
+The archive follows a local-first strategy for stable display. Images actually used in the series should be copied into `assets/<slug>/` whenever their files can be retrieved, and entries should use repository-relative Markdown paths such as `../assets/<slug>/01.jpg` and `../assets/<slug>/02.jpg`.
 
-Source attribution is preserved separately from display. Each entry should keep the original source page and, when available, the original direct image URL, creator or institution, and a short provenance note. This allows the Markdown to remain visually stable even if an external image host later changes or disables hotlinking.
+The default visual set is two images per cat. The pair should add information rather than duplicate the same view. Early or unusually obscure entries may contain only one image when a second useful reference is genuinely unavailable.
 
-ChatGPT-internal `turn...image...` identifiers are presentation references rather than durable source URLs and should not be stored as archive links. When historical entries only retain such internal references, re-identify the corresponding external source or an equivalent authoritative reference before local archival.
+Each local image must keep provenance information in the entry: the original source page, direct image URL when available, creator/institution when known, and a short note describing what the image contributes. Source information is for traceability; repository-local files are for stable rendering.
+
+ChatGPT-internal `turn...image...` identifiers are presentation references, not durable external URLs, and must never be stored as archive links. For historical entries where only such an internal reference remains, relocate the same or an equivalent external reference and archive the recovered image locally.
 
 ## Historical data
 
 The first twelve entries, covering the original run sequence from 2026-08-15 through 2026-08-26, were reconstructed and rewritten on 2026-08-27 so that the archive starts with the current editorial standard rather than preserving inconsistent early drafts. The duplicate Behemoth delivery on 2026-08-27 is not treated as a separate entry; its richer material was used when revising the original 2026-08-15 Behemoth article.
+
+The historical image backfill subsequently archived two local visual references for each of those twelve entries and rewrote the Markdown files to use relative `assets/` paths.
