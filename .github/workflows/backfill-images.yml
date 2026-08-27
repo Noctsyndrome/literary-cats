@@ -1,3 +1,4 @@
+# Historical backfill utility; touching this file triggers a run.
 name: Backfill literary cat images
 
 on:
@@ -53,7 +54,6 @@ jobs:
                   continue
               original = md_path.read_text(encoding='utf-8')
               body = re.split(r'\n### 视觉参考\n', original, maxsplit=1)[0].rstrip()
-              # Remove any previously inserted image block directly beneath the H1 title.
               lines = body.splitlines()
               if not lines or not lines[0].startswith('# '):
                   errors.append(f'{slug}: malformed title')
@@ -74,7 +74,6 @@ jobs:
                       try:
                           data, ext = download(url, image.get('source_page', ''))
                           filename = f'{idx:02d}{ext}'
-                          # Remove old same-index files with a different extension.
                           for old in asset_dir.glob(f'{idx:02d}.*'):
                               old.unlink()
                           (asset_dir / filename).write_bytes(data)
