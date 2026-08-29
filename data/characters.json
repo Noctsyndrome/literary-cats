@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -16,6 +16,7 @@
     {"canonical_name":"Crookshanks","aliases":["克鲁克山"],"work":"Harry Potter series","work_zh":"“哈利·波特”系列","author":"J. K. Rowling","introduced_date":"2026-08-25","entry_path":"entries/2026-08-25-crookshanks.md","source":"rewritten_historical_backfill"},
     {"canonical_name":"Snowbell","aliases":["雪球"],"work":"Stuart Little","work_zh":"《精灵鼠小弟》","author":"E. B. White","introduced_date":"2026-08-26","entry_path":"entries/2026-08-26-snowbell.md","source":"rewritten_historical_backfill"},
     {"canonical_name":"The Cat","aliases":["Coraline's Cat","无名黑猫","黑猫"],"work":"Coraline","work_zh":"《鬼妈妈》/《卡萝兰》","author":"Neil Gaiman","introduced_date":"2026-08-27","entry_path":"entries/2026-08-27-coraline-cat.md","source":"manual_makeup_run"},
-    {"canonical_name":"Tom Kitten","aliases":["Tom","小猫汤姆","汤姆小猫"],"work":"The Tale of Tom Kitten","work_zh":"《小猫汤姆的故事》","author":"Beatrix Potter","introduced_date":"2026-08-28","entry_path":"entries/2026-08-28-tom-kitten.md","source":"scheduled_run"}
+    {"canonical_name":"Tom Kitten","aliases":["Tom","小猫汤姆","汤姆小猫"],"work":"The Tale of Tom Kitten","work_zh":"《小猫汤姆的故事》","author":"Beatrix Potter","introduced_date":"2026-08-28","entry_path":"entries/2026-08-28-tom-kitten.md","source":"scheduled_run"},
+    {"canonical_name":"Dinah","aliases":["黛娜","戴娜","Dinah the Cat"],"work":"Alice's Adventures in Wonderland; Through the Looking-Glass","work_zh":"《爱丽丝梦游仙境》；《爱丽丝镜中奇遇》","author":"Lewis Carroll","introduced_date":"2026-08-29","entry_path":"entries/2026-08-29-dinah.md","source":"scheduled_run"}
   ]
 }
