@@ -1,0 +1,32 @@
+name: Import Puss in Boots images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-puss-in-boots-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public-domain visual references
+        run: |
+          set -euo pipefail
+          mkdir -p assets/puss-in-boots
+          curl -L --fail --retry 3 -A 'Mozilla/5.0' 'https://upload.wikimedia.org/wikipedia/commons/5/56/Gustave_Dor%C3%A9_Puss_in_Boots.jpg' -o assets/puss-in-boots/01.jpg
+          curl -L --fail --retry 3 -A 'Mozilla/5.0' 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Walter_Crane-Cat01.jpg' -o assets/puss-in-boots/02.jpg
+          test -s assets/puss-in-boots/01.jpg
+          test -s assets/puss-in-boots/02.jpg
+      - name: Commit image assets and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/puss-in-boots/01.jpg assets/puss-in-boots/02.jpg
+          git rm .github/workflows/import-puss-in-boots-images.yml
+          git commit -m 'Archive Puss in Boots visual references'
+          git push
