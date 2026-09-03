@@ -18,13 +18,11 @@
 ### 视觉参考
 
 1. 鲁德亚德·吉卜林原版插图中的独来独往的猫
-   - 本地文件：`../assets/cat-that-walked-by-himself/01.jpg`
    - 来源页面：https://commons.wikimedia.org/wiki/File:Just_so_stories_for_litle_children_(1902)_(14761890286).jpg
    - 原始图片：https://upload.wikimedia.org/wikipedia/commons/7/70/Just_so_stories_for_litle_children_%281902%29_%2814761890286%29.jpg
    - 作者/机构：Rudyard Kipling；扫描来源 Internet Archive Book Images / University of North Carolina at Chapel Hill
    - 说明：1902 年《Just So Stories》原版体系中的插图，画面直接对应吉卜林对“独自在潮湿荒野森林中行走”的猫的说明。
 2. Joseph M. Gleeson 1912 年版插图中的猫与人类洞穴
-   - 本地文件：`../assets/cat-that-walked-by-himself/02.jpg`
    - 来源页面：https://commons.wikimedia.org/wiki/File:Illustration_to_The_Cat_that_Walked_by_Himself_(Doubleday_ed.).jpg
    - 原始图片：https://upload.wikimedia.org/wikipedia/commons/a/a9/Illustration_to_The_Cat_that_Walked_by_Himself_%28Doubleday_ed.%29.jpg
    - 作者/机构：Joseph M. Gleeson（Wikimedia Commons 标注为可能作者）；New York Public Library 扫描来源

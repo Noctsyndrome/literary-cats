@@ -62,8 +62,8 @@ Each scheduled run should:
 3. Research the character, prioritizing the original literary text for appearance details and supplementing with well-established illustrations or screen adaptations when useful.
 4. Generate the ChatGPT article using the fixed title format `今天的文学猫角色：角色名`.
 5. Use two visual references by default. Prefer complementary images, such as an original/early illustration plus a classic screen or later authoritative visualization, or an overall portrait plus a second scene/version. Use fewer than two only when a genuinely useful second reference cannot be found.
-6. Save the image files under `assets/<slug>/` and reference them from the Markdown entry with repository-relative paths. Source URLs remain in the entry for provenance; local files are the primary display resources.
-7. Save the complete article to `entries/YYYY-MM-DD-slug.md`. The GitHub version may include a final `视觉参考` section containing the local image references and source/provenance links.
+6. Save the image files under `assets/<slug>/` using the standard numbered filenames. Source URLs remain in the entry for provenance; local files are the primary display resources.
+7. Save the complete article to `entries/YYYY-MM-DD-slug.md`. The GitHub version may include a final `视觉参考` section containing source and provenance details, but it must not expose repository-internal `本地文件` path lines.
 8. Only after the entry file is written successfully, append the new character record to `data/characters.json` and commit the update.
 9. Deliver the same article body in ChatGPT.
 
@@ -71,7 +71,7 @@ If the GitHub write fails, the ChatGPT delivery may still proceed, but the respo
 
 ## Visual references
 
-The archive follows a local-first strategy for stable display. Images actually used in the series should be copied into `assets/<slug>/` whenever their files can be retrieved, and entries should use repository-relative Markdown paths such as `../assets/<slug>/01.jpg` and `../assets/<slug>/02.jpg`.
+The archive follows a local-first strategy for stable display. Images actually used in the series should be copied into `assets/<slug>/` whenever their files can be retrieved and named sequentially, such as `01.jpg` and `02.jpg`. The site resolves those assets from the entry slug, so repository-relative local paths should not be printed in the Markdown article.
 
 The default visual set is two images per cat. The pair should add information rather than duplicate the same view. Early or unusually obscure entries may contain only one image when a second useful reference is genuinely unavailable.
 
@@ -83,4 +83,4 @@ ChatGPT-internal `turn...image...` identifiers are presentation references, not 
 
 The first twelve entries, covering the original run sequence from 2026-08-15 through 2026-08-26, were reconstructed and rewritten on 2026-08-27 so that the archive starts with the current editorial standard rather than preserving inconsistent early drafts. The duplicate Behemoth delivery on 2026-08-27 is not treated as a separate entry; its richer material was used when revising the original 2026-08-15 Behemoth article.
 
-The historical image backfill subsequently archived two local visual references for each of those twelve entries and rewrote the Markdown files to use relative `assets/` paths.
+The historical image backfill subsequently archived two local visual references for each of those twelve entries and retained their external provenance in the Markdown files.

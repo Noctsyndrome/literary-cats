@@ -16,13 +16,11 @@
 ### 视觉参考
 
 1. 现代版本中的托伯莫里形象
-   - 本地文件：`../assets/tobermory/01.jpg`
    - 来源页面：https://aliflaila.app/books/tobermory
    - 原始图片：https://cdn.aliflaila.app/books/3954362594/cover_vVmsCYRBfwfM6hxjvDQ7BHtkv1bQliINLihHWPgj.jpg
    - 作者/机构：Ali Flaila
    - 说明：原作未规定毛色，因此作为后世视觉化参考
 2. 托伯莫里有声书封面的古典猫形象
-   - 本地文件：`../assets/tobermory/02.jpg`
    - 来源页面：https://libro.fm/audiobooks/9781467667951-tobermory
    - 原始图片：https://covers.libro.fm/9781467667951_1120.jpg
    - 作者/机构：Libro.fm

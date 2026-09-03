@@ -16,13 +16,11 @@
 ### 视觉参考
 
 1. Dave McKean 笔下的无名黑猫与 Coraline
-   - 本地文件：`../assets/coraline-cat/01.jpg`
    - 来源页面：https://imgur.com/gallery/dave-mckeans-sketches-coraline-book-by-neil-gaiman-OVKIQ
    - 原始图片：https://i.imgur.com/eZNQGVpg.jpg
    - 作者/机构：Dave McKean
    - 说明：Dave McKean 是 2002 年原版《Coraline》的插画家；这幅黑白图突出黑猫瘦长、尖耳和略显诡秘的气质。
 2. Chris Riddell 笔下的无名黑猫与 Coraline
-   - 本地文件：`../assets/coraline-cat/02.jpg`
    - 来源页面：https://www.pinterest.com/pin/aleatrios--741053313728078941/
    - 原始图片：https://i.pinimg.com/736x/2a/4e/a7/2a4ea7fa5a21d9e1c0dba6099f306f4e.jpg
    - 作者/机构：Chris Riddell

@@ -14,13 +14,11 @@ E. T. A. 霍夫曼笔下的穆尔猫有一套非常具体、甚至颇为华丽�
 ### 视觉参考
 
 1. 穆尔猫执笔写作的经典卷首图
-   - 本地文件：`../assets/kater-murr/01.jpg`
    - 来源页面：https://etahoffmann.staatsbibliothek-berlin.de/leben-und-werk/literat/werkinterpretationen/
    - 原始图片：https://etahoffmann.staatsbibliothek-berlin.de/wp-content/uploads/Katalog-Ponert-SBBamberg-Abb.167b-Kat.218_L.g.o.391b_Ebd.Vorderseite-Bd.1-Kater-Murr-eingeb_beschnitten-768x1017.jpg
    - 作者/机构：E. T. A. Hoffmann Portal / Staatsbibliothek zu Berlin
    - 说明：强调穆尔作为“作家”的拟人化形象
 2. Theodor Hosemann笔下的穆尔猫群像
-   - 本地文件：`../assets/kater-murr/02.jpg`
    - 来源页面：https://www.corriere.it/cultura/16_aprile_08/hoffmann-gatto-murr-33afbfb2-fd98-11e5-820b-500d9d51558a.shtml
    - 原始图片：https://images2.corriereobjects.it/methode_image/2016/04/08/Cultura/Foto%20Cultura%20-%20Trattate/09_HOSEMANN_MURR_1844-U430605845976557d-U43170546763225YzF-1224x916%40Corriere-Web-Sezioni-593x443.jpg
    - 作者/机构：Theodor Hosemann

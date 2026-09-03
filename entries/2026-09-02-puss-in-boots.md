@@ -18,13 +18,11 @@
 ### 视觉参考
 
 1. 古斯塔夫·多雷笔下的穿靴子的猫
-   - 本地文件：`../assets/puss-in-boots/01.jpg`
    - 来源页面：https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_Puss_in_Boots.jpg
    - 原始图片：https://upload.wikimedia.org/wikipedia/commons/5/56/Gustave_Dor%C3%A9_Puss_in_Boots.jpg
    - 作者/机构：Gustave Doré / Wikimedia Commons
    - 说明：1862 年《Les Contes de Perrault》插图中的代表性形象，突出羽饰帽、披风、腰带与靴子的拟人化游侠气质；作品为公版。
 2. 沃尔特·克兰笔下的穿靴子的猫
-   - 本地文件：`../assets/puss-in-boots/02.jpg`
    - 来源页面：https://commons.wikimedia.org/wiki/File:Walter_Crane-Cat01.jpg
    - 原始图片：https://upload.wikimedia.org/wikipedia/commons/c/c4/Walter_Crane-Cat01.jpg
    - 作者/机构：Walter Crane / Wikimedia Commons

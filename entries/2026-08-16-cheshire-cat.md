@@ -14,13 +14,11 @@
 ### 视觉参考
 
 1. 约翰·坦尼尔笔下树上的柴郡猫
-   - 本地文件：`../assets/cheshire-cat/01.jpg`
    - 来源页面：https://www.pinterest.com/pin/677158493950726668/
    - 原始图片：https://i.pinimg.com/originals/54/d0/54/54d05410e8bc91786f7da6ce079cc4ac.jpg
    - 作者/机构：John Tenniel
    - 说明：经典初版插画体系
 2. 柴郡猫悬在王室上方的笑脸
-   - 本地文件：`../assets/cheshire-cat/02.webp`
    - 来源页面：https://www.fineartstorehouse.com/magical-world-illustration/palmer-illustrated-collection/cheshire-cat-smiling-king-queen-alice-21177459.html
    - 原始图片：https://www.fineartstorehouse.com/p/629/cheshire-cat-smiling-king-queen-alice-21177459.jpg.webp
    - 作者/机构：John Tenniel

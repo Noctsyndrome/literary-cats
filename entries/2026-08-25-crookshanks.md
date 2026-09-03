@@ -16,13 +16,11 @@
 ### 视觉参考
 
 1. 电影《阿兹卡班的囚徒》中的克鲁克山
-   - 本地文件：`../assets/crookshanks/01.jpg`
    - 来源页面：https://www.harrypotter.com/features/influential-cats-of-the-wizarding-world
    - 原始图片：https://contentful.harrypotter.com/usf1vwtuqyxm/1VewXrez2U26IIaOUOm0Uo/9257ef81ac9e419a0ec9560d5b50fa8f/WB_F3_Crookshanks_SOLOcrop_C240_51_UP_HPE3.jpg
    - 作者/机构：Warner Bros. / Harry Potter official site
    - 说明：官方影视形象，突出姜黄色长毛和扁脸
 2. 赫敏怀抱克鲁克山的电影画面
-   - 本地文件：`../assets/crookshanks/02.png`
    - 来源页面：https://www.seventeen.com/celebrity/movies-tv/news/a39240/this-crazy-harry-potter-fan-theory-claims-that-crookshanks-is-actually-harrys-cat/
    - 原始图片：https://sev.h-cdn.co/assets/16/13/768x432/hd-aspect-1459349193-imagcse12.png
    - 作者/机构：Warner Bros. film still

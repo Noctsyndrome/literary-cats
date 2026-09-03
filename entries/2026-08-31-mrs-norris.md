@@ -16,13 +16,11 @@
 ### 视觉参考
 
 1. 电影中的洛丽丝夫人与费尔奇
-   - 本地文件：`../assets/mrs-norris/01.jpg`
    - 来源页面：https://www.harrypotter.com/fact-file/characters-and-pets/mrs-norris-fact-file
    - 原始图片：https://contentful.harrypotter.com/usf1vwtuqyxm/1V2TaZbK85XRReTih0baQX/c7c446cd49117befc39bdd8a1ade1eca/hp-f6-filch-mrs-norris-cropped-app-landscape.jpg?fit=pad&fm=jpg&h=416&q=75&w=600
    - 作者/机构：Warner Bros. / HarryPotter.com
    - 说明：官方角色资料采用的电影形象，能够清楚看到她棕灰色长毛、宽阔面部和警觉目光。
 2. 洛丽丝夫人与费尔奇在霍格沃茨走廊中发现哈利和罗恩
-   - 本地文件：`../assets/mrs-norris/02.jpg`
    - 来源页面：https://www.harrypotter.com/features/in-defence-of-argus-filch
    - 原始图片：https://contentful.harrypotter.com/usf1vwtuqyxm/6cyDtFMyFaGW48u6G62o44/f48bda84c984e13773c57779c6755cdc/ArgusFilch_WB_F1_FilchWithMrsNorrisCatchingHarryAndRon_9897.jpg?fm=jpg&q=75&w=914
    - 作者/机构：Warner Bros. / HarryPotter.com

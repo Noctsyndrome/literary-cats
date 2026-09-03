@@ -16,13 +16,11 @@ Tom 的可爱之处就在这里：他不是一个有明确目标的冒险英雄�
 ### 视觉参考
 
 1. 碧雅翠丝·波特笔下穿着蓝色礼服的小猫汤姆
-   - 本地文件：`../assets/tom-kitten/01.jpg`
    - 来源页面：https://www.gutenberg.org/cache/epub/14837/pg14837-images.html
    - 原始图片：https://www.gutenberg.org/cache/epub/14837/images/tom20.jpg
    - 作者/机构：Beatrix Potter / Project Gutenberg
    - 说明：原作插图，清楚呈现 Tom 的虎斑毛色、体型和蓝色正式服装。
 2. 小猫汤姆穿过花园岩石区时纽扣一路崩落
-   - 本地文件：`../assets/tom-kitten/02.jpg`
    - 来源页面：https://www.gutenberg.org/cache/epub/14837/pg14837-images.html
    - 原始图片：https://www.gutenberg.org/cache/epub/14837/images/tom28.jpg
    - 作者/机构：Beatrix Potter / Project Gutenberg
