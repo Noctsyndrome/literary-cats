@@ -1,0 +1,45 @@
+name: Import Cat that Walked by Himself images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-cat-walked-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download visual references
+        run: |
+          set -euo pipefail
+          mkdir -p assets/cat-that-walked-by-himself
+          python - <<'PY'
+          import urllib.request, pathlib
+          items = [
+              ('https://upload.wikimedia.org/wikipedia/commons/7/70/Just_so_stories_for_litle_children_%281902%29_%2814761890286%29.jpg', 'assets/cat-that-walked-by-himself/01.jpg'),
+              ('https://upload.wikimedia.org/wikipedia/commons/a/a9/Illustration_to_The_Cat_that_Walked_by_Himself_%28Doubleday_ed.%29.jpg', 'assets/cat-that-walked-by-himself/02.jpg'),
+          ]
+          headers = {'User-Agent': 'literary-cats archival bot/1.0'}
+          for url, out in items:
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  data = r.read()
+                  ctype = (r.headers.get_content_type() or '').lower()
+              if len(data) < 10000 or ctype not in ('image/jpeg','image/jpg'):
+                  raise RuntimeError(f'bad download {url}: {len(data)} bytes {ctype}')
+              pathlib.Path(out).write_bytes(data)
+          PY
+      - name: Commit images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/cat-that-walked-by-himself
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive Cat that Walked by Himself images'
+            git push
+          fi
