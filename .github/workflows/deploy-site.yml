@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'data/characters.json'
+      - 'src/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'wrangler.jsonc'
   workflow_dispatch:
 
 permissions:
