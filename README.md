@@ -47,6 +47,13 @@ npm run deploy:production
 
 The production Worker routes are limited to `www.denkibrew.com/literary-cats` and `www.denkibrew.com/literary-cats/*`; the existing homepage and all unrelated paths remain outside this Worker. Cloudflare-ready files are generated under `.cloudflare/dist/literary-cats/` and are not committed.
 
+Every push to `main` automatically runs `.github/workflows/deploy-site.yml`: GitHub Actions installs the locked dependencies, builds the Cloudflare-ready static output, deploys the production Worker with Wrangler, and verifies the public URL. The repository must define these Actions secrets:
+
+- `CLOUDFLARE_API_TOKEN` — a scoped token allowed to edit Workers scripts and the Worker routes for `denkibrew.com`.
+- `CLOUDFLARE_ACCOUNT_ID` — the Cloudflare account containing the Worker and zone.
+
+The workflow can also be started manually from GitHub Actions. Its concurrency group cancels an older in-progress deployment when a newer daily commit arrives.
+
 ## Repository layout
 
 - `data/characters.json` — persistent index of cats that have already been introduced. This is the primary source for deduplication.

@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - 'data/image-backfill.json'
-      - '.github/workflows/backfill-images.yml'
   workflow_dispatch:
 
 permissions:
@@ -93,7 +92,6 @@ jobs:
               refs = ['### 视觉参考', '']
               for i, ((caption, rel), (image, used_url)) in enumerate(zip(local_refs, provenance), start=1):
                   refs.append(f'{i}. {caption}')
-                  refs.append(f'   - 本地文件：`{rel}`')
                   refs.append(f"   - 来源页面：{image.get('source_page','')}")
                   refs.append(f'   - 原始图片：{used_url}')
                   if image.get('credit'):
