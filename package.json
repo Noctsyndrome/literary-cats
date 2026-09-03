@@ -1,0 +1,21 @@
+{
+  "name": "literary-cats",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:cloudflare": "astro check && CLOUDFLARE_BUILD=1 astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build:cloudflare && wrangler deploy --env=\"\"",
+    "deploy:production": "npm run build:cloudflare && wrangler deploy --env production"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.13.5",
+    "marked": "^16.2.1",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.128.0"
+  }
+}

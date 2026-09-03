@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getEntries, withBase } from '../lib/content';
+
+const entries = getEntries();
+const latest = entries[0];
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>每天，<br />认识一只文学作品里的猫。</h1>
+      <a class="button" href={withBase(`cats/${latest.slug}`)}>
+        阅读今日角色
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
+      </a>
+    </div>
+    <a class="hero-image" href={withBase(`cats/${latest.slug}`)} aria-label={`阅读 ${latest.canonical_name}`}>
+      <img src={latest.cover} alt={latest.images[0]?.alt || latest.canonical_name} />
+    </a>
+  </section>
+
+  <a class="latest" href={withBase(`cats/${latest.slug}`)}>
+    <img src={latest.cover} alt="" />
+    <div class="latest-copy">
+      <p class="label">今日角色</p>
+      <h2>{latest.canonical_name}</h2>
+      {latest.chineseName && <p class="latest-zh">{latest.chineseName}</p>}
+      <p class="meta">{latest.author} · {latest.work_zh}</p>
+      <time datetime={latest.introduced_date}>{formatDate(latest.introduced_date)}</time>
+    </div>
+    <svg class="arrow" viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
+  </a>
+
+  <section class="archive" id="archive">
+    <div class="section-head">
+      <div>
+        <h2>所有猫角色</h2>
+        <p>{entries.length} 只猫</p>
+      </div>
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m16 16 5 5" /></svg>
+        <span class="sr-only">搜索角色、作品或作者</span>
+        <input id="cat-search" type="search" placeholder="搜索角色、作品或作者" autocomplete="off" />
+      </label>
+    </div>
+
+    <div class="cat-list" id="cat-list">
+      {entries.map((entry, index) => (
+        <article
+          class:list={['cat-item', index % 5 === 0 && 'cat-item--wide']}
+          data-search={`${entry.canonical_name} ${entry.aliases.join(' ')} ${entry.work} ${entry.work_zh} ${entry.author}`.toLowerCase()}
+        >
+          <a href={withBase(`cats/${entry.slug}`)}>
+            <figure><img src={entry.cover} alt={entry.images[0]?.alt || entry.canonical_name} loading="lazy" /></figure>
+            <div class="cat-copy">
+              <time datetime={entry.introduced_date}>{formatDate(entry.introduced_date)}</time>
+              <h3>{entry.canonical_name}</h3>
+              {entry.chineseName && <p class="cat-zh">{entry.chineseName}</p>}
+              <span class="rule"></span>
+              <p>{entry.author}</p>
+              <p>{entry.work_zh}</p>
+              <svg class="arrow" viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+    <p class="empty" id="empty-state" hidden>没有找到这只猫。换个名字、作品或作者试试。</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>关于这个档案</h2>
+    <p>这是一个每日更新的小型文学档案：从原作出发，认识文学作品中的猫角色，并保存可靠的视觉资料与来源线索。</p>
+    <p>文字、图片与角色索引全部公开存档；每一只猫，都保留它来到这里的日期。</p>
+  </section>
+
+  <script>
+    const input = document.querySelector<HTMLInputElement>('#cat-search');
+    const items = [...document.querySelectorAll<HTMLElement>('.cat-item')];
+    const empty = document.querySelector<HTMLElement>('#empty-state');
+    input?.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+      for (const item of items) {
+        const match = !query || item.dataset.search?.includes(query);
+        item.hidden = !match;
+        if (match) visible += 1;
+      }
+      if (empty) empty.hidden = visible !== 0;
+    });
+  </script>
+</BaseLayout>

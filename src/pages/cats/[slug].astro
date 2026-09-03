@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, getEntries, withBase, type CatEntry } from '../../lib/content';
+
+export function getStaticPaths() {
+  return getEntries().map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+interface Props { entry: CatEntry }
+const { entry } = Astro.props;
+const entries = getEntries();
+const currentIndex = entries.findIndex((item) => item.slug === entry.slug);
+const next = entries[currentIndex + 1] || entries[0];
+---
+
+<BaseLayout title={entry.chineseName ? `${entry.canonical_name}（${entry.chineseName}）` : entry.canonical_name} description={entry.excerpt.slice(0, 150)} image={entry.cover}>
+  <article class="entry">
+    <a class="back-link" href={withBase()}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M10 7l-5 5 5 5" /></svg>
+      返回所有猫角色
+    </a>
+
+    <header class="entry-header">
+      <div>
+        <h1>{entry.canonical_name}</h1>
+        {entry.chineseName && <p>{entry.chineseName}</p>}
+        <dl class="entry-meta">
+          <div><dt>作者</dt><dd>{entry.author}</dd></div>
+          <div><dt>作品</dt><dd>{entry.work_zh}</dd></div>
+          <div><dt>收录</dt><dd><time datetime={entry.introduced_date}>{formatDate(entry.introduced_date)}</time></dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="entry-grid">
+      <div class="reading-column">
+        {entry.images[0] && (
+          <figure class="lead-figure">
+            <img src={entry.images[0].src} alt={entry.images[0].alt} />
+            <figcaption>{entry.images[0].alt}</figcaption>
+          </figure>
+        )}
+        <div class="prose" set:html={entry.bodyHtml}></div>
+      </div>
+
+      <aside class="dossier" aria-label="角色档案">
+        <h2>角色档案</h2>
+        <dl>
+          <div><dt>作者</dt><dd>{entry.author}</dd></div>
+          <div><dt>作品</dt><dd>{entry.work_zh}</dd></div>
+          <div><dt>原文</dt><dd>{entry.work}</dd></div>
+          <div><dt>收录日期</dt><dd>{formatDate(entry.introduced_date)}</dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    {entry.images[1] && (
+      <figure class="secondary-figure">
+        <img src={entry.images[1].src} alt={entry.images[1].alt} loading="lazy" />
+        <figcaption>{entry.images[1].alt}</figcaption>
+      </figure>
+    )}
+
+    {entry.referencesHtml && (
+      <section class="references">
+        <h2>视觉参考</h2>
+        <div class="reference-prose" set:html={entry.referencesHtml}></div>
+      </section>
+    )}
+
+    <a class="next-entry" href={withBase(`cats/${next.slug}`)}>
+      <span>下一只猫</span>
+      <strong>{next.canonical_name}{next.chineseName && ` / ${next.chineseName}`}</strong>
+      <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
+    </a>
+  </article>
+</BaseLayout>

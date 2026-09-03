@@ -2,6 +2,51 @@
 
 A small archive for the daily ChatGPT series introducing cats that appear in literature.
 
+The repository also contains an Astro static site that reads the archive files directly. No separate CMS or duplicated content index is required.
+
+## Website development
+
+```bash
+npm install
+npm run dev
+```
+
+The production build defaults to `https://www.denkibrew.com/literary-cats/`:
+
+```bash
+npm run build
+```
+
+For a root-domain deployment such as `https://cats.denkibrew.com/`, build with:
+
+```bash
+SITE_URL=https://cats.denkibrew.com SITE_BASE=/ npm run build
+```
+
+Generated files are written to `dist/`. The archive pages are created from `data/characters.json` and `entries/*.md`; referenced files under `assets/` are fingerprinted into the static build automatically.
+
+## Cloudflare deployment
+
+The site is deployed as Cloudflare Worker Static Assets and managed with the project-local Wrangler dependency. Authenticate a new machine once with:
+
+```bash
+npx wrangler login
+```
+
+Publish and inspect the `workers.dev` preview first:
+
+```bash
+npm run deploy
+```
+
+After verification, publish the same build to `https://www.denkibrew.com/literary-cats/`:
+
+```bash
+npm run deploy:production
+```
+
+The production Worker routes are limited to `www.denkibrew.com/literary-cats` and `www.denkibrew.com/literary-cats/*`; the existing homepage and all unrelated paths remain outside this Worker. Cloudflare-ready files are generated under `.cloudflare/dist/literary-cats/` and are not committed.
+
 ## Repository layout
 
 - `data/characters.json` — persistent index of cats that have already been introduced. This is the primary source for deduplication.

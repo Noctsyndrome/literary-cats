@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.cloudflare/
+.astro/
+.DS_Store

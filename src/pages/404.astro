@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/content';
+---
+
+<BaseLayout title="没有找到这只猫">
+  <section class="not-found">
+    <p class="giant">404</p>
+    <h1>这只猫独自走开了。</h1>
+    <p>这里没有你要找的页面，也许它正躲在另一部书里。</p>
+    <a class="button" href={withBase()}>返回文学猫档案</a>
+  </section>
+</BaseLayout>

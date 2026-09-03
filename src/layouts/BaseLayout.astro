@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import { withBase } from '../lib/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = '文学猫档案',
+  description = '每天认识一只文学作品里的猫。',
+  image,
+} = Astro.props;
+const pageTitle = title === '文学猫档案' ? title : `${title}｜文学猫档案`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <meta name="theme-color" content="#f2be22" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+    <header class="site-header">
+      <a class="archive-mark" href={withBase()}>文学猫档案</a>
+      <nav aria-label="主要导航">
+        <a href={`${withBase()}#archive`}>猫角色</a>
+        <a href={`${withBase()}#about`}>关于</a>
+      </nav>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>A daily literary cat archive by Dennki Brewing</p>
+      <a href="https://github.com/Noctsyndrome/literary-cats">GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
