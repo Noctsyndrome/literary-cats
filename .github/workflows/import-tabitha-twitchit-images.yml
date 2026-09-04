@@ -1,0 +1,44 @@
+name: Import Tabitha Twitchit visual references
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-tabitha-twitchit-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download visual references
+        run: |
+          set -euo pipefail
+          mkdir -p assets/tabitha-twitchit
+
+          curl --fail --location --retry 3 \
+            -A 'Mozilla/5.0' \
+            'https://www.gutenberg.org/cache/epub/14837/images/tom04.jpg' \
+            -o assets/tabitha-twitchit/01.jpg
+
+          curl --fail --location --retry 3 \
+            -A 'Mozilla/5.0' \
+            'https://www.gutenberg.org/cache/epub/14837/images/tom19.jpg' \
+            -o assets/tabitha-twitchit/02.jpg
+
+          test $(stat -c%s assets/tabitha-twitchit/01.jpg) -gt 1024
+          test $(stat -c%s assets/tabitha-twitchit/02.jpg) -gt 1024
+
+      - name: Commit visual references
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/tabitha-twitchit/01.jpg assets/tabitha-twitchit/02.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive Tabitha Twitchit visual references'
+            git push
+          fi
