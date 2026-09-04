@@ -68,11 +68,14 @@ function parseEntry(record: CharacterRecord): CatEntry {
   while (lines[0]?.trim() === '') lines.shift();
 
   const images: Array<{ src: string; alt: string }> = [];
-  while (lines[0]?.match(/^!\[([^\]]*)\]\(\.\.\/assets\/([^)]+)\)$/)) {
-    const match = lines.shift()!.match(/^!\[([^\]]*)\]\(\.\.\/assets\/([^)]+)\)$/)!;
+  while (true) {
+    const match = lines[0]?.match(/^!\[([^\]]*)\]\(\.\.\/assets\/([^)]+)\)$/);
+    if (!match) break;
+
+    lines.shift();
     images.push({ alt: match[1], src: imageUrl(match[2]) });
+    while (lines[0]?.trim() === '') lines.shift();
   }
-  while (lines[0]?.trim() === '') lines.shift();
 
   const rest = lines.join('\n');
   const [bodyMarkdown, referencesMarkdown = ''] = rest.split(/\n### 视觉参考\n/);
