@@ -29,7 +29,7 @@ const entryFiles = import.meta.glob('../../entries/*.md', {
   import: 'default',
 }) as Record<string, string>;
 
-const assetFiles = import.meta.glob('../../assets/**/*.{jpg,jpeg,png,webp,avif}', {
+const assetFiles = import.meta.glob('../../assets/**/*.{jpg,jpeg,png,gif,webp,avif}', {
   eager: true,
   query: '?url',
   import: 'default',
