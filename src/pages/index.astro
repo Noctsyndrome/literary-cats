@@ -9,9 +9,14 @@ const latest = entries[0];
 <BaseLayout>
   <section class="hero">
     <div class="hero-copy">
-      <h1>每天，<br />认识一只文学作品里的猫。</h1>
+      <p class="hero-kicker"><span>最新收录</span><time datetime={latest.introduced_date}>{formatDate(latest.introduced_date)}</time></p>
+      <h1>{latest.canonical_name}</h1>
+      {latest.chineseName && <p class="hero-alias">{latest.chineseName}</p>}
+      <p class="hero-author">{latest.author}</p>
+      <p class="hero-work">{latest.work_zh || latest.work}</p>
+      <p class="hero-excerpt">{latest.excerpt}</p>
       <a class="button" href={withBase(`cats/${latest.slug}`)}>
-        阅读今日角色
+        阅读角色
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
       </a>
     </div>
@@ -19,18 +24,6 @@ const latest = entries[0];
       <img src={latest.cover} alt={latest.images[0]?.alt || latest.canonical_name} />
     </a>
   </section>
-
-  <a class="latest" href={withBase(`cats/${latest.slug}`)}>
-    <img src={latest.cover} alt="" />
-    <div class="latest-copy">
-      <p class="label">今日角色</p>
-      <h2>{latest.canonical_name}</h2>
-      {latest.chineseName && <p class="latest-zh">{latest.chineseName}</p>}
-      <p class="meta">{latest.author} · {latest.work_zh}</p>
-      <time datetime={latest.introduced_date}>{formatDate(latest.introduced_date)}</time>
-    </div>
-    <svg class="arrow" viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
-  </a>
 
   <section class="archive" id="archive">
     <div class="section-head">
@@ -48,7 +41,8 @@ const latest = entries[0];
     <div class="cat-list" id="cat-list">
       {entries.map((entry, index) => (
         <article
-          class:list={['cat-item', index % 5 === 0 && 'cat-item--wide']}
+          class="cat-item"
+          data-layout={index % 8}
           data-search={`${entry.canonical_name} ${entry.aliases.join(' ')} ${entry.work} ${entry.work_zh} ${entry.author}`.toLowerCase()}
         >
           <a href={withBase(`cats/${entry.slug}`)}>
@@ -60,6 +54,7 @@ const latest = entries[0];
               <span class="rule"></span>
               <p>{entry.author}</p>
               <p>{entry.work_zh}</p>
+              <p class="cat-excerpt">{entry.excerpt}</p>
               <svg class="arrow" viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
             </div>
           </a>
@@ -85,7 +80,10 @@ const latest = entries[0];
       for (const item of items) {
         const match = !query || item.dataset.search?.includes(query);
         item.hidden = !match;
-        if (match) visible += 1;
+        if (match) {
+          item.dataset.layout = String(visible % 8);
+          visible += 1;
+        }
       }
       if (empty) empty.hidden = visible !== 0;
     });

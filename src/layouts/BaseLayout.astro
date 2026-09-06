@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
+import '../styles/redesign.css';
 import { withBase } from '../lib/content';
+import { Image } from 'astro:assets';
+import readingCat from '../assets/reading-cat.png';
 
 interface Props {
   title?: string;
@@ -10,7 +13,7 @@ interface Props {
 
 const {
   title = '文学猫档案',
-  description = '每天认识一只文学作品里的猫。',
+  description = '认识文学作品里的猫。',
   image,
 } = Astro.props;
 const pageTitle = title === '文学猫档案' ? title : `${title}｜文学猫档案`;
@@ -35,17 +38,24 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <a class="skip-link" href="#content">跳到正文</a>
     <header class="site-header">
       <a class="archive-mark" href={withBase()}>文学猫档案</a>
+      <p class="site-slogan">认识文学作品里的猫。</p>
       <nav aria-label="主要导航">
-        <a href={`${withBase()}#archive`}>猫角色</a>
-        <a href={`${withBase()}#about`}>关于</a>
+        <a href={`${withBase()}#archive`}>浏览猫角色</a>
+        <a href={`${withBase()}#about`}>关于档案</a>
       </nav>
     </header>
     <main id="content">
       <slot />
     </main>
     <footer class="site-footer">
-      <p>A daily literary cat archive by <a href="https://www.denkibrew.com/">Dennki Brewing</a></p>
-      <a href="https://github.com/Noctsyndrome/literary-cats">GitHub <span aria-hidden="true">↗</span></a>
+      <div class="footer-cat" aria-hidden="true">
+        <Image src={readingCat} alt="" width={240} format="webp" loading="lazy" />
+      </div>
+      <div class="footer-colophon">
+        <p>A daily literary cat archive</p>
+        <p>by <a class="footer-brewing" href="https://www.denkibrew.com/"><span aria-hidden="true">🍺</span> Dennki Brewing</a></p>
+        <a class="footer-source" href="https://github.com/Noctsyndrome/literary-cats">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
     </footer>
   </body>
 </html>
