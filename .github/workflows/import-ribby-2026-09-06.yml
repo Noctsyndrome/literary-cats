@@ -1,0 +1,54 @@
+name: Import Ribby visual references 2026-09-06
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-ribby-2026-09-06.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download visual references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ribby
+          curl -L --fail --retry 3 --retry-delay 2 -A 'Mozilla/5.0' \
+            'https://www.gutenberg.org/files/15234/15234-h/images/pie11.gif' \
+            -o assets/ribby/01.gif
+          curl -L --fail --retry 3 --retry-delay 2 -A 'Mozilla/5.0' \
+            'https://www.gutenberg.org/files/15234/15234-h/images/pie42.jpg' \
+            -o assets/ribby/02.jpg
+
+      - name: Validate downloaded images
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s assets/ribby/01.gif
+          test -s assets/ribby/02.jpg
+          file assets/ribby/01.gif assets/ribby/02.jpg
+          file --mime-type -b assets/ribby/01.gif | grep -qx 'image/gif'
+          file --mime-type -b assets/ribby/02.jpg | grep -Eq '^image/(jpeg|jpg)$'
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ribby/01.gif assets/ribby/02.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Import Ribby visual references 2026-09-06'
+          git push
