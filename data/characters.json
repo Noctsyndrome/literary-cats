@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-08",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -26,6 +26,7 @@
     {"canonical_name":"Mrs. Tabitha Twitchit","aliases":["Tabitha Twitchit","Mrs Tabitha Twitchit","Cousin Tabitha Twitchit"],"work":"The Tale of Tom Kitten; The Tale of Samuel Whiskers","work_zh":"《小猫汤姆的故事》；《塞缪尔·惠斯克斯的故事》","author":"Beatrix Potter","introduced_date":"2026-09-04","entry_path":"entries/2026-09-04-tabitha-twitchit.md","source":"scheduled_run"},
     {"canonical_name":"Good Fortune","aliases":["好运","Good Fortune the Cat"],"work":"The Cat Who Went to Heaven","work_zh":"《上天堂的猫》","author":"Elizabeth Coatsworth","introduced_date":"2026-09-05","entry_path":"entries/2026-09-05-good-fortune.md","source":"scheduled_run"},
     {"canonical_name":"Ribby","aliases":["Ribby the Cat","Mrs. Ribston","Mrs Ribston"],"work":"The Tale of the Pie and the Patty-Pan","work_zh":"《馅饼和馅饼盘的故事》","author":"Beatrix Potter","introduced_date":"2026-09-06","entry_path":"entries/2026-09-06-ribby.md","source":"scheduled_run"},
-    {"canonical_name":"Pussy-cat","aliases":["Pussy Cat","The Pussy-cat","The Pussy Cat"],"work":"The Owl and the Pussy-Cat","work_zh":"《猫头鹰和猫咪》","author":"Edward Lear","introduced_date":"2026-09-07","entry_path":"entries/2026-09-07-pussy-cat.md","source":"scheduled_run"}
+    {"canonical_name":"Pussy-cat","aliases":["Pussy Cat","The Pussy-cat","The Pussy Cat"],"work":"The Owl and the Pussy-Cat","work_zh":"《猫头鹰和猫咪》","author":"Edward Lear","introduced_date":"2026-09-07","entry_path":"entries/2026-09-07-pussy-cat.md","source":"scheduled_run"},
+    {"canonical_name":"Selima","aliases":["Selima the Cat","塞利玛","赛利玛"],"work":"Ode on the Death of a Favourite Cat, Drowned in a Tub of Gold Fishes","work_zh":"《一只宠猫之死颂——溺于金鱼缸中》","author":"Thomas Gray","introduced_date":"2026-09-08","entry_path":"entries/2026-09-08-selima.md","source":"scheduled_run"}
   ]
 }
