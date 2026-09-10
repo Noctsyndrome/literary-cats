@@ -1,0 +1,48 @@
+name: Import daily literary cat images - Ginger 2026-09-10
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-2026-09-10-ginger.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download locked images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ginger
+          curl --fail --location --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0' \
+            'https://www.fiction.us/potter/ginger/pic123/ginger_fig13.jpg' \
+            -o assets/ginger/01.jpg
+          curl --fail --location --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0' \
+            'https://www.fiction.us/potter/ginger/pic123/ginger_fig33.jpg' \
+            -o assets/ginger/02.jpg
+          file assets/ginger/01.jpg assets/ginger/02.jpg
+          test -s assets/ginger/01.jpg
+          test -s assets/ginger/02.jpg
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ginger/01.jpg assets/ginger/02.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit.'
+          else
+            git commit -m 'Import daily literary cat images: Ginger'
+            git push
+          fi
