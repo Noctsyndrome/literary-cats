@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-10",
+  "updated_at": "2026-09-11",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -29,6 +29,7 @@
     {"canonical_name":"Pussy-cat","aliases":["Pussy Cat","The Pussy-cat","The Pussy Cat"],"work":"The Owl and the Pussy-Cat","work_zh":"《猫头鹰和猫咪》","author":"Edward Lear","introduced_date":"2026-09-07","entry_path":"entries/2026-09-07-pussy-cat.md","source":"scheduled_run"},
     {"canonical_name":"Selima","aliases":["Selima the Cat","塞利玛","赛利玛"],"work":"Ode on the Death of a Favourite Cat, Drowned in a Tub of Gold Fishes","work_zh":"《一只宠猫之死颂——溺于金鱼缸中》","author":"Thomas Gray","introduced_date":"2026-09-08","entry_path":"entries/2026-09-08-selima.md","source":"scheduled_run"},
     {"canonical_name":"Tibert","aliases":["Tybert","Thibert","Tybalt","Tibert the Cat","Tybert the Cat"],"work":"The History of Reynard the Fox (Reynard cycle)","work_zh":"《列那狐的故事》/《列那狐传奇》","author":"Anonymous medieval tradition; William Caxton (English translator)","introduced_date":"2026-09-09","entry_path":"entries/2026-09-09-tibert.md","source":"scheduled_run"},
-    {"canonical_name":"Ginger","aliases":["Ginger the Cat","Ginger the tom-cat"],"work":"The Tale of Ginger and Pickles","work_zh":"《The Tale of Ginger and Pickles》","author":"Beatrix Potter","introduced_date":"2026-09-10","entry_path":"entries/2026-09-10-ginger.md","source":"scheduled_run"}
+    {"canonical_name":"Ginger","aliases":["Ginger the Cat","Ginger the tom-cat"],"work":"The Tale of Ginger and Pickles","work_zh":"《The Tale of Ginger and Pickles》","author":"Beatrix Potter","introduced_date":"2026-09-10","entry_path":"entries/2026-09-10-ginger.md","source":"scheduled_run"},
+    {"canonical_name":"Dick Whittington's Cat","aliases":["Whittington's Cat","Dick's Cat","Puss","Mrs. Puss"],"work":"Dick Whittington and His Cat","work_zh":"《迪克·惠廷顿和他的猫》","author":"English folk tradition; Joseph Jacobs (1890 retelling)","introduced_date":"2026-09-11","entry_path":"entries/2026-09-11-dick-whittingtons-cat.md","source":"scheduled_run"}
   ]
 }
