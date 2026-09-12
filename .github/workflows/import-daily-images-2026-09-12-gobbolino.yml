@@ -1,0 +1,64 @@
+name: Import daily literary cat images - Gobbolino 2026-09-12
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-daily-images-2026-09-12-gobbolino.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Download locked reference images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/gobbolino
+
+          download_image() {
+            local url="$1"
+            local stem="$2"
+            local tmp="/tmp/${stem}.download"
+            curl --fail --location --retry 3 --retry-delay 2 \
+              --user-agent 'Mozilla/5.0 (compatible; literary-cats-image-import/1.0)' \
+              "$url" -o "$tmp"
+            test -s "$tmp"
+            local mime
+            mime="$(file -b --mime-type "$tmp")"
+            case "$mime" in
+              image/jpeg) ext="jpg" ;;
+              image/png)  ext="png" ;;
+              image/webp) ext="webp" ;;
+              image/gif)  ext="gif" ;;
+              *) echo "Unsupported MIME type for ${stem}: ${mime}" >&2; exit 1 ;;
+            esac
+            rm -f "assets/gobbolino/${stem}.jpg" "assets/gobbolino/${stem}.jpeg" "assets/gobbolino/${stem}.png" "assets/gobbolino/${stem}.webp" "assets/gobbolino/${stem}.gif"
+            mv "$tmp" "assets/gobbolino/${stem}.${ext}"
+            file "assets/gobbolino/${stem}.${ext}"
+          }
+
+          download_image 'https://dukaan.b-cdn.net/700x700/webp/media/2da911cd-dcd8-4373-8b2d-89c91edda634.jpg' '01'
+          download_image 'https://countryhouselibrary.co.uk/cdn/shop/products/orig_253568_jpg_small.jpg?v=1681829943' '02'
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/gobbolino
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Import daily literary cat images: Gobbolino (2026-09-12)'
+          git push origin HEAD:main
