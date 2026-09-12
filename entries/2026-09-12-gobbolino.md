@@ -22,4 +22,4 @@ Ursula Moray Williams 在 1942 年出版的《Gobbolino, the Witch's Cat》里�
 
 图 1：来源页面：https://bookforest.in/products/gobbolino-the-witch-s-cat-kingfisher-classics ；原始图片 URL：https://dukaan.b-cdn.net/700x700/webp/media/2da911cd-dcd8-4373-8b2d-89c91edda634.jpg ；作者/机构：Paul Howard（插画），Kingfisher Classics；说明：该版本封面直接突出 Gobbolino 的蓝眼睛、深色毛皮与一只白色前爪，是后期具有代表性的角色视觉形象。
 
-图 2：来源页面：https://countryhouselibrary.co.uk/products/gobbolino-the-witchs-cat-by-ursula-moray-williams-puffin-1965 ；原始图片 URL：https://countryhouselibrary.co.uk/cdn/shop/products/orig_253568_jpg_small.jpg?v=1681829943 ；作者/机构：Puffin Books；说明：1965 年 Puffin 版书影，提供较早版本中 Gobbolino 的封面视觉参考。
+图 2：来源页面：https://countryhouselibrary.co.uk/products/gobbolino-the-witchs-cat-by-ursula-moray-williams-puffin-1965 ；原始图片 URL：https://countryhouselibrary.co.uk/cdn/shop/products/orig_253568_jpg_1200x.jpg?v=1681829943 ；作者/机构：Puffin Books；说明：1965 年 Puffin 版书影，提供较早版本中 Gobbolino 的封面视觉参考。
