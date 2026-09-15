@@ -1,0 +1,83 @@
+name: Import Thomasina locked images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-thomasina-2026-09-15.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download locked visual references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/thomasina
+
+          curl --fail --location --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36' \
+            -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8' \
+            -e 'https://www.nyrb.com/products/thomasina-1' \
+            'https://www.nyrb.com/cdn/shop/products/Thomasina_final.jpg?v=1671233084' \
+            -o assets/thomasina/01.jpg
+
+          curl --fail --location --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36' \
+            -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8' \
+            -e 'https://myliveactiondisneyproject.com/2017/07/24/the-three-lives-of-thomasina-1964/' \
+            'https://myliveactiondisneyproject.com/wp-content/uploads/2017/07/thomasinacat.png?w=1024' \
+            -o assets/thomasina/02.png
+
+          python - <<'PY'
+          from pathlib import Path
+          import struct
+
+          def dims(path):
+              data = Path(path).read_bytes()
+              if data.startswith(b'\x89PNG\r\n\x1a\n'):
+                  return struct.unpack('>II', data[16:24])
+              if data[:2] == b'\xff\xd8':
+                  i = 2
+                  while i + 9 < len(data):
+                      if data[i] != 0xFF:
+                          i += 1
+                          continue
+                      while i < len(data) and data[i] == 0xFF:
+                          i += 1
+                      marker = data[i]
+                      i += 1
+                      if marker in (0xD8, 0xD9):
+                          continue
+                      if i + 2 > len(data):
+                          break
+                      seglen = int.from_bytes(data[i:i+2], 'big')
+                      if marker in {0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF}:
+                          h = int.from_bytes(data[i+3:i+5], 'big')
+                          w = int.from_bytes(data[i+5:i+7], 'big')
+                          return w, h
+                      i += seglen
+              raise RuntimeError(f'Unsupported or invalid image: {path}')
+
+          for p in ['assets/thomasina/01.jpg', 'assets/thomasina/02.png']:
+              size = Path(p).stat().st_size
+              w, h = dims(p)
+              if size < 1024 or w <= 0 or h <= 0:
+                  raise RuntimeError(f'Invalid image file: {p}')
+              print(f'{p}: {w}x{h}, {size} bytes')
+          PY
+
+      - name: Commit locked images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/thomasina/01.jpg assets/thomasina/02.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'Import locked images for Thomasina'
+            git push
+          fi
