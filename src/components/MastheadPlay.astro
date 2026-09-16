@@ -1,0 +1,172 @@
+---
+import { withBase } from '../lib/content';
+import { getImage } from 'astro:assets';
+import peek from '../assets/masthead/peek.png';
+import approach from '../assets/masthead/approach.png';
+import leap from '../assets/masthead/leap.png';
+import turn from '../assets/masthead/turn.png';
+import tap from '../assets/masthead/tap.png';
+import chase from '../assets/masthead/chase.png';
+
+interface Props { autoPlay?: boolean }
+const {autoPlay=false}=Astro.props;
+
+const imageUrls=Object.fromEntries(await Promise.all(
+  Object.entries({peek,approach,leap,turn,tap,chase}).map(async([name,src])=>{
+    const image=await getImage({src,format:'webp',quality:90});
+    return [name,image.src];
+  }),
+));
+---
+<masthead-play class="masthead-play" data-autoplay={autoPlay?'true':'false'} data-atlases={JSON.stringify(imageUrls)}>
+  <a class="archive-mark" href={withBase()}><span class="masthead-title-viewport"><span class="masthead-title">文学猫档案</span></span></a>
+  <div class="cat-stage" aria-hidden="true"><canvas></canvas></div>
+</masthead-play>
+<style>
+  .masthead-play { display: block; position: relative; grid-column: 1 / -1; min-width: 0; }
+  .archive-mark { display: block; width: var(--mark-width, calc(100% - 260px)); max-width: 100%; }
+  /* Keep the original rule visible above the paper-colored canvas. */
+  .archive-mark::after { z-index: 1; }
+  .masthead-title-viewport { display: block; }
+  .masthead-title { display: inline-block; transform: translate3d(var(--title-shift, 0px), 0, 0); }
+  [data-motion-mode="pan"] .masthead-title-viewport { position: relative; z-index: 1; overflow: clip; }
+  [data-motion-mode="pan"].is-playing .masthead-title { will-change: transform; }
+  .cat-stage { position: absolute; right: calc(100% - var(--mark-width, 100%)); bottom: -5px; width: var(--stage-width, 0px); height: var(--stage-height, 64px); overflow: hidden; pointer-events: none; opacity: 0; }
+  .cat-stage canvas { display: block; width: 100%; height: 100%; }
+  .is-playing .cat-stage { opacity: 1; }
+  .is-playing .archive-mark::after { right: 0; }
+  @media (max-width: 620px) { .archive-mark { width: var(--mark-width, 100%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .cat-stage { display: none; }
+    .masthead-title { transform: none; }
+  }
+</style>
+<script>
+  import {chooseLayout,fullAssets,fullDuration,peekDuration,panDuration,sampleFull,samplePeek,samplePan,renderRaster} from '../lib/masthead-raster.mjs';
+
+  // Load the full atlas set for desktop/phone stories only when triggered.
+  // A narrow non-compact layout can still use the lightweight peek fallback.
+  const imageCache=new Map<string,Promise<HTMLImageElement>>();
+  function loadImage(url:string) {
+    let loading=imageCache.get(url);
+    if(!loading) {
+      loading=(async()=>{const image=new Image();image.decoding='async';image.src=url;await image.decode();return image;})();
+      imageCache.set(url,loading);
+      loading.catch(()=>imageCache.delete(url));
+    }
+    return loading;
+  }
+  class MastheadPlay extends HTMLElement {
+    cleanup?:()=>void;
+    connectedCallback() {
+      this.cleanup?.();
+      const title=this.querySelector<HTMLElement>('.masthead-title');
+      const mark=this.querySelector<HTMLAnchorElement>('.archive-mark');
+      const canvas=this.querySelector<HTMLCanvasElement>('canvas');
+      if(!title||!mark||!canvas) return;
+      const ctx=canvas.getContext('2d');if(!ctx) return;
+      let sources:Record<string,string>;
+      try{sources=JSON.parse(this.dataset.atlases||'{}');}catch{return;}
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+      const hover=matchMedia('(hover: hover) and (pointer: fine)');
+      const allowAutoPlay=this.dataset.autoplay==='true';
+      const controller=new AbortController(),{signal}=controller;
+      let pending:ReturnType<typeof setTimeout>|undefined,raf=0,ticket=0,playing=false;
+      let autoPlayed=false,inView=false;
+      let layout={mode:'none',width:0,height:64};
+      const cancelPending=()=>{clearTimeout(pending);pending=undefined;ticket++;};
+      const stop=()=>{
+        cancelPending();cancelAnimationFrame(raf);playing=false;
+        this.classList.remove('is-playing');delete this.dataset.motionPhase;
+        this.style.removeProperty('--title-shift');
+        ctx.clearRect(0,0,layout.width,layout.height);
+      };
+      const start=async(automatic:boolean)=>{
+        // Detail pages retain desktop hover, but never load atlases for autoplay.
+        if(automatic&&!allowAutoPlay) return;
+        if(playing||reduced.matches||layout.mode==='none'||document.hidden) return;
+        const current=++ticket,mode=layout.mode;
+        try{
+          const names=mode==='peek'?['peek']:fullAssets;
+          const images=Object.fromEntries(await Promise.all(names.map(async(name:string)=>{
+            if(!sources[name]) throw new Error('Missing masthead atlas');
+            return [name,await loadImage(sources[name])];
+          })));
+          if(current!==ticket||!this.isConnected||document.hidden||reduced.matches||mode!==layout.mode||(automatic&&!inView)) return;
+          if(automatic) autoPlayed=true;
+          const {width,height}=layout,dpr=Math.min(devicePixelRatio||1,3);
+          canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
+          ctx.setTransform(dpr,0,0,dpr,0,0);
+          const style=getComputedStyle(this),paper=style.getPropertyValue('--paper').trim()||'#fffef9',yellow=style.getPropertyValue('--yellow').trim()||'#f2be22';
+          const titleWidth=title.getBoundingClientRect().width;
+          const duration=mode==='pan'?panDuration:mode==='full'?fullDuration:peekDuration;
+          const began=performance.now();playing=true;this.classList.add('is-playing');
+          const tick=(now:number)=>{
+            if(current!==ticket) return;
+            const elapsed=(now-began)/1000;
+            if(elapsed>=duration){stop();return;}
+            try {
+              const state=mode==='pan'?samplePan(elapsed,width,height,titleWidth):mode==='full'?sampleFull(elapsed,width,height):samplePeek(elapsed,width,height);
+              this.dataset.motionPhase=state.phase;
+              if('titleShift' in state) this.style.setProperty('--title-shift',state.titleShift+'px');
+              renderRaster(ctx,images,state,width,height,paper,yellow);
+            } catch {
+              // A failed decoration must never strand the title offscreen.
+              stop();return;
+            }
+            raf=requestAnimationFrame(tick);
+          };
+          tick(began);
+        }catch{
+          // Decorations must never break navigation. Later hover may retry.
+          if(current===ticket) stop();
+        }
+      };
+      const schedule=(automatic=false)=>{
+        if(playing||reduced.matches||layout.mode==='none') return;
+        if(layout.mode==='pan'&&document.activeElement===mark) return;
+        cancelPending();pending=setTimeout(()=>{pending=undefined;void start(automatic);},automatic?1200:500);
+      };
+      const maybeAuto=()=>{
+        if(allowAutoPlay&&!hover.matches&&(layout.mode==='pan'||layout.mode==='peek')&&inView&&!autoPlayed&&!playing&&pending===undefined&&!reduced.matches) schedule(true);
+      };
+      const resize=()=>{
+        const header=this.closest('header'),nav=header?.querySelector('nav');
+        const compact=matchMedia('(max-width: 620px)').matches;
+        const gap=header?parseFloat(getComputedStyle(header).columnGap)||0:0;
+        const width=this.clientWidth,titleWidth=title.getBoundingClientRect().width;
+        const markWidth=compact?width:Math.max(titleWidth,width-(nav?.getBoundingClientRect().width||0)-gap);
+        const next=chooseLayout({markWidth,titleWidth,canHover:hover.matches,compact});
+        if(next.mode!==layout.mode||Math.abs(next.width-layout.width)>.5) stop();
+        layout=next;
+        this.style.setProperty('--mark-width',markWidth+'px');
+        this.style.setProperty('--stage-width',layout.width+'px');
+        this.style.setProperty('--stage-height',layout.height+'px');
+        this.dataset.motionMode=layout.mode;
+        maybeAuto();
+      };
+      const observer=new ResizeObserver(resize);observer.observe(this);observer.observe(title);
+      const visibility=new IntersectionObserver(([entry])=>{
+        inView=entry.isIntersecting&&entry.intersectionRatio>=.6;
+        if(!inView) stop();else maybeAuto();
+      },{threshold:[0,.6]});visibility.observe(this);
+      title.addEventListener('pointerenter',()=>{if(hover.matches) schedule();},{signal});
+      title.addEventListener('pointerleave',()=>{if(!playing) cancelPending();},{signal});
+      mark.addEventListener('focus',()=>{
+        // Never leave a keyboard-focused homepage link outside the viewport.
+        if(layout.mode==='pan') stop();
+        else if(hover.matches) schedule();
+      },{signal});
+      mark.addEventListener('blur',()=>{if(!playing) cancelPending();},{signal});
+      // No click/touch handlers: the title stays an ordinary homepage link.
+      hover.addEventListener('change',()=>{stop();resize();},{signal});
+      reduced.addEventListener('change',()=>{stop();maybeAuto();},{signal});
+      document.addEventListener('visibilitychange',()=>{if(document.hidden) stop();else maybeAuto();},{signal});
+      canvas.addEventListener('contextlost',stop,{signal});
+      resize();
+      this.cleanup=()=>{stop();observer.disconnect();visibility.disconnect();controller.abort();};
+    }
+    disconnectedCallback(){this.cleanup?.();}
+  }
+  if(!customElements.get('masthead-play')) customElements.define('masthead-play',MastheadPlay);
+</script>

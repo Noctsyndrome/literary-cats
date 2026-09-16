@@ -6,7 +6,7 @@ const entries = getEntries();
 const latest = entries[0];
 ---
 
-<BaseLayout>
+<BaseLayout mastheadAutoPlay>
   <section class="hero">
     <div class="hero-copy">
       <p class="hero-kicker"><span>最新收录</span><time datetime={latest.introduced_date}>{formatDate(latest.introduced_date)}</time></p>

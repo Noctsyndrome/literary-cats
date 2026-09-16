@@ -162,11 +162,6 @@ figcaption { margin-top: .7rem; color: var(--muted); font: .68rem/1.6 var(--mono
 .reference-prose ol { padding-left: 1.4rem; }
 .reference-prose li { margin-bottom: 1.5rem; padding-left: .5rem; }
 .reference-prose ul { padding-left: 1rem; color: #4a463f; }
-.next-entry { position: relative; display: flex; flex-direction: column; gap: .45rem; padding: 1.5rem 4rem 1.5rem 0; border-block: 1px solid var(--line); text-decoration: none; }
-.next-entry span { font-size: .78rem; }
-.next-entry strong { font-size: clamp(1.4rem, 3vw, 3rem); font-weight: 500; text-decoration: underline; text-underline-offset: 5px; }
-.next-entry svg { position: absolute; right: 0; top: 50%; width: 38px; transform: translateY(-50%); }
-.next-entry:hover svg { transform: translate(6px, -50%); }
 .entry + * { margin-top: 0; }
 .entry ~ * { }
 
@@ -224,7 +219,6 @@ figcaption { margin-top: .7rem; color: var(--muted); font: .68rem/1.6 var(--mono
   .dossier dl { grid-template-columns: 1fr; }
   .dossier dl div:nth-child(n) { border-right: 0; padding-inline: 0; }
   .secondary-figure { grid-template-columns: 1fr; margin-block: 3rem; }
-  .next-entry strong { padding-right: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -25,6 +25,23 @@ SITE_URL=https://cats.denkibrew.com SITE_BASE=/ npm run build
 
 Generated files are written to `dist/`. The archive pages are created from `data/characters.json` and `entries/*.md`; referenced files under `assets/` are fingerprinted into the static build automatically.
 
+Entry navigation follows the homepage's newest-to-oldest order: “上一只猫” leads to the adjacent newer entry and “下一只猫” to the adjacent older entry. Links include their collection dates. The newest and oldest entries show only the available direction; navigation never wraps between the two ends. On phones, the two links stack vertically.
+
+## Masthead animation
+
+The decorative cat uses six imagegen-created raster atlases in `src/assets/masthead/`, optimized to WebP by Astro and loaded only when playback is triggered. `src/components/MastheadPlay.astro` controls playback; `src/lib/masthead-raster.mjs` defines the measured frame bounds, scene timing, and canvas rendering.
+
+- Desktop: hovering over the title for 500ms starts the 8.6-second story. Moving away after playback starts does not interrupt it; leaving and hovering again after completion replays it without a cooldown.
+- Touch screens: only the homepage opts into autoplay. Once at least 60% of the masthead is visible, wait 1200ms, then load/decode the artwork and play once per page load. Detail pages keep a static title and do not load animation images for autoplay.
+- Compact layouts: the title slides left with the ball's cubic ease-out over 0.85 seconds, then returns at a constant speed from 6.25 to 8.35 seconds. The scene shares the title row without increasing header height. Insufficient space falls back to a short peek or no decoration.
+- Reduced-motion preferences disable playback. Leaving the viewport threshold, hiding the page, changing the layout, or a drawing failure stops playback and restores the title. A started autoplay does not repeat after scrolling back. The homepage link remains usable without JavaScript.
+
+Run the animation regression tests with:
+
+```bash
+node --test src/lib/masthead-raster.test.mjs src/lib/masthead-pan.test.mjs
+```
+
 ## Cloudflare deployment
 
 The site is deployed as Cloudflare Worker Static Assets and managed with the project-local Wrangler dependency. Authenticate a new machine once with:

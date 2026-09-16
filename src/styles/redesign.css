@@ -69,7 +69,20 @@ main { border: 0; }
 .dossier h2 { font-size: 1.2rem; }
 .dossier dl div { grid-template-columns: 3rem 1fr; }
 .references h2 { font-size: 1.6rem; }
-.next-entry strong { font-size: 1.7rem; }
+.entry-pagination { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; border-block: 1px solid var(--line); }
+.entry-neighbor { position: relative; display: flex; flex-direction: column; justify-content: center; gap: .5rem; min-width: 0; padding-block: 1.4rem; text-decoration: none; }
+.entry-neighbor--previous { padding-left: 2.75rem; }
+.entry-neighbor--next { grid-column: 2; padding-right: 2.75rem; text-align: right; }
+.entry-neighbor:only-child { grid-column: 1 / -1; }
+.entry-neighbor--previous:not(:last-child)::after { content: ''; position: absolute; top: 1.4rem; bottom: 1.4rem; right: -1.5rem; border-right: 1px solid var(--soft-line); }
+.entry-neighbor-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; font-size: .75rem; }
+.entry-neighbor--next .entry-neighbor-meta { justify-content: flex-end; }
+.entry-neighbor time { color: var(--muted); font-family: var(--mono); font-size: .7rem; }
+.entry-neighbor strong { font-size: clamp(1.15rem, 2.3vw, 1.7rem); font-weight: 500; line-height: 1.5; overflow-wrap: anywhere; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.entry-neighbor svg { position: absolute; top: 50%; width: 28px; transform: translateY(-50%); }
+.entry-neighbor--previous svg { left: 0; }
+.entry-neighbor--next svg { right: 0; }
+.entry-neighbor:hover strong, .entry-neighbor:focus-visible strong { text-decoration-color: var(--yellow); text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
 /* A quiet endpiece, separate from the page's reading/navigation controls. */
 .site-footer { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem 0 2.5rem; text-align: center; }
@@ -116,4 +129,9 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
   .about { grid-template-columns: 1fr; gap: 1rem; }
   .site-footer { flex-wrap: wrap; }
   .entry-header { padding-top: 1.5rem; }
+  .entry-pagination { grid-template-columns: minmax(0, 1fr); }
+  .entry-neighbor { padding-block: 1.1rem; }
+  .entry-neighbor--next { grid-column: 1; }
+  .entry-neighbor + .entry-neighbor { border-top: 1px solid var(--soft-line); }
+  .entry-neighbor--previous::after { display: none; }
 }

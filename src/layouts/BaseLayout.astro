@@ -4,17 +4,20 @@ import '../styles/redesign.css';
 import { withBase } from '../lib/content';
 import { Image } from 'astro:assets';
 import readingCat from '../assets/reading-cat.png';
+import MastheadPlay from '../components/MastheadPlay.astro';
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  mastheadAutoPlay?: boolean;
 }
 
 const {
   title = '文学猫档案',
   description = '认识文学作品里的猫。',
   image,
+  mastheadAutoPlay = false,
 } = Astro.props;
 const pageTitle = title === '文学猫档案' ? title : `${title}｜文学猫档案`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -37,7 +40,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <body>
     <a class="skip-link" href="#content">跳到正文</a>
     <header class="site-header">
-      <a class="archive-mark" href={withBase()}>文学猫档案</a>
+      <MastheadPlay autoPlay={mastheadAutoPlay} />
       <p class="site-slogan">认识文学作品里的猫。</p>
       <nav aria-label="主要导航">
         <a href={`${withBase()}#archive`}>浏览猫角色</a>

@@ -3,14 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formatDate, getEntries, withBase, type CatEntry } from '../../lib/content';
 
 export function getStaticPaths() {
-  return getEntries().map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+  // Follow the same newest-to-oldest order as the homepage, without wrapping.
+  const entries = getEntries();
+  return entries.map((entry, index) => ({
+    params: { slug: entry.slug },
+    props: { entry, previous: entries[index - 1], next: entries[index + 1] },
+  }));
 }
 
-interface Props { entry: CatEntry }
-const { entry } = Astro.props;
-const entries = getEntries();
-const currentIndex = entries.findIndex((item) => item.slug === entry.slug);
-const next = entries[currentIndex + 1] || entries[0];
+interface Props { entry: CatEntry; previous?: CatEntry; next?: CatEntry }
+const { entry, previous, next } = Astro.props;
 ---
 
 <BaseLayout title={entry.chineseName ? `${entry.canonical_name}（${entry.chineseName}）` : entry.canonical_name} description={entry.excerpt.slice(0, 150)} image={entry.cover}>
@@ -68,10 +70,23 @@ const next = entries[currentIndex + 1] || entries[0];
       </section>
     )}
 
-    <a class="next-entry" href={withBase(`cats/${next.slug}`)}>
-      <span>下一只猫</span>
-      <strong>{next.canonical_name}{next.chineseName && ` / ${next.chineseName}`}</strong>
-      <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
-    </a>
+    {(previous || next) && (
+      <nav class="entry-pagination" aria-label="相邻猫角色">
+        {previous && (
+          <a class="entry-neighbor entry-neighbor--previous" href={withBase(`cats/${previous.slug}`)} rel="prev">
+            <span class="entry-neighbor-meta"><span>上一只猫</span><time datetime={previous.introduced_date}>{formatDate(previous.introduced_date)}</time></span>
+            <strong>{previous.canonical_name}{previous.chineseName && ` / ${previous.chineseName}`}</strong>
+            <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M31 12H3M11 3l-9 9 9 9" /></svg>
+          </a>
+        )}
+        {next && (
+          <a class="entry-neighbor entry-neighbor--next" href={withBase(`cats/${next.slug}`)} rel="next">
+            <span class="entry-neighbor-meta"><span>下一只猫</span><time datetime={next.introduced_date}>{formatDate(next.introduced_date)}</time></span>
+            <strong>{next.canonical_name}{next.chineseName && ` / ${next.chineseName}`}</strong>
+            <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M1 12h28M21 3l9 9-9 9" /></svg>
+          </a>
+        )}
+      </nav>
+    )}
   </article>
 </BaseLayout>
