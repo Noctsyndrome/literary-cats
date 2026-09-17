@@ -1,0 +1,100 @@
+name: Import Orlando the Marmalade Cat images 2026-09-18
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-orlando-the-marmalade-cat-2026-09-18.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download locked visual references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/orlando-the-marmalade-cat
+
+          curl --fail --location --retry 4 --retry-delay 3 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
+            -e 'https://www.etsy.com/ie/listing/1808644821/vintage-orlando-the-marmalade-cat-book-a' \
+            'https://i.etsystatic.com/21984561/r/il/12536b/6390725495/il_fullxfull.6390725495_my0b.jpg' \
+            -o assets/orlando-the-marmalade-cat/01.jpg
+
+          curl --fail --location --retry 4 --retry-delay 3 \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
+            -e 'https://www.cha-cha-cha.co.uk/listing/655483181/orlando-the-cat-vintage-picture-book-a' \
+            'https://i.etsystatic.com/12499385/r/il/c4d294/1717408831/il_fullxfull.1717408831_pntt.jpg' \
+            -o assets/orlando-the-marmalade-cat/02.jpg
+
+      - name: Validate downloaded images
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in assets/orlando-the-marmalade-cat/01.jpg assets/orlando-the-marmalade-cat/02.jpg; do
+            test -s "$f"
+            test "$(stat -c%s "$f")" -gt 100000
+            file "$f"
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import struct
+
+          def jpeg_size(path):
+              data = Path(path).read_bytes()
+              if data[:2] != b'\xff\xd8':
+                  raise SystemExit(f'{path}: not JPEG')
+              i = 2
+              while i + 9 < len(data):
+                  if data[i] != 0xFF:
+                      i += 1
+                      continue
+                  while i < len(data) and data[i] == 0xFF:
+                      i += 1
+                  if i >= len(data):
+                      break
+                  marker = data[i]
+                  i += 1
+                  if marker in (0xD8, 0xD9) or 0xD0 <= marker <= 0xD7:
+                      continue
+                  if i + 2 > len(data):
+                      break
+                  length = struct.unpack('>H', data[i:i+2])[0]
+                  if marker in {0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF}:
+                      h, w = struct.unpack('>HH', data[i+3:i+7])
+                      return w, h
+                  i += length
+              raise SystemExit(f'{path}: no JPEG size marker')
+
+          expected = {
+              'assets/orlando-the-marmalade-cat/01.jpg': (900, 900),
+              'assets/orlando-the-marmalade-cat/02.jpg': (900, 900),
+          }
+          for path, (min_w, min_h) in expected.items():
+              w, h = jpeg_size(path)
+              print(f'{path}: {w}x{h}')
+              if w < min_w or h < min_h:
+                  raise SystemExit(f'{path}: downloaded image is smaller than the inspected full-size source version')
+          PY
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/orlando-the-marmalade-cat/01.jpg assets/orlando-the-marmalade-cat/02.jpg
+          if git diff --cached --quiet; then
+            echo 'Locked images already present with identical content.'
+          else
+            git commit -m 'Import Orlando the Marmalade Cat visual references'
+            git push
+          fi
