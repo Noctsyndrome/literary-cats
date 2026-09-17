@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-16",
+  "updated_at": "2026-09-17",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -35,6 +35,7 @@
     {"canonical_name":"Jeoffry","aliases":["Cat Jeoffry","My Cat Jeoffry","Jeoffrey","杰弗里"],"work":"Jubilate Agno","work_zh":"《Jubilate Agno》（“Rejoice in the Lamb”）","author":"Christopher Smart","introduced_date":"2026-09-13","entry_path":"entries/2026-09-13-jeoffry.md","source":"scheduled_run"},
     {"canonical_name":"Jenny Linsky","aliases":["Jenny","Miss Linsky","Jenny the Cat"],"work":"The Cat Club series","work_zh":"“Jenny's Cat Club”系列","author":"Esther Averill","introduced_date":"2026-09-14","entry_path":"entries/2026-09-14-jenny-linsky.md","source":"scheduled_run"},
     {"canonical_name":"Thomasina","aliases":["Thomasina the Cat","Bast-Ra","Talitha","托马西娜"],"work":"Thomasina, the Cat Who Thought She Was God","work_zh":"《Thomasina, the Cat Who Thought She Was God》","author":"Paul Gallico","introduced_date":"2026-09-15","entry_path":"entries/2026-09-15-thomasina.md","source":"scheduled_run"},
-    {"canonical_name":"Slinky Malinki","aliases":["Slinky","Slinky Malinki the Cat"],"work":"Slinky Malinki; Hairy Maclary and Friends series","work_zh":"《Slinky Malinki》；“Hairy Maclary and Friends”系列","author":"Lynley Dodd","introduced_date":"2026-09-16","entry_path":"entries/2026-09-16-slinky-malinki.md","source":"scheduled_run"}
+    {"canonical_name":"Slinky Malinki","aliases":["Slinky","Slinky Malinki the Cat"],"work":"Slinky Malinki; Hairy Maclary and Friends series","work_zh":"《Slinky Malinki》；“Hairy Maclary and Friends”系列","author":"Lynley Dodd","introduced_date":"2026-09-16","entry_path":"entries/2026-09-16-slinky-malinki.md","source":"scheduled_run"},
+    {"canonical_name":"Mehitabel","aliases":["Mehitabel the Cat","Mehitabel the alley cat"],"work":"archy and mehitabel","work_zh":"《archy and mehitabel》","author":"Don Marquis","introduced_date":"2026-09-17","entry_path":"entries/2026-09-17-mehitabel.md","source":"scheduled_run"}
   ]
 }
