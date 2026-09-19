@@ -35,42 +35,47 @@ jobs:
 
           download \
             'https://images.squarespace-cdn.com/content/v1/5a0dec38aeb6250b51582f71/1603374510624-X967UE3SD3OI2XU2UBF0/White%2BCat%2Band%2Bthe%2BMonk%2B1.jpg?format=2500w' \
-            'assets/pangur-ban/01.jpg' \
+            'assets/pangur-ban/01.webp' \
             'https://www.sydneydraws.ca/the-white-cat-and-the-monk'
 
           download \
             'https://images.squarespace-cdn.com/content/v1/5a0dec38aeb6250b51582f71/1603374512473-QEJD3080GH0ZQH3LW4HO/White%2BCat%2Band%2Bthe%2BMonk%2B2.jpg?format=2500w' \
-            'assets/pangur-ban/02.jpg' \
+            'assets/pangur-ban/02.webp' \
             'https://www.sydneydraws.ca/the-white-cat-and-the-monk'
 
           python3 - <<'PY'
           from pathlib import Path
           import struct
 
-          def jpeg_size(path):
+          def webp_size(path):
               data = Path(path).read_bytes()
-              if not data.startswith(b'\xff\xd8'):
-                  raise SystemExit(f'{path}: not a JPEG')
-              i = 2
-              while i + 9 < len(data):
-                  if data[i] != 0xFF:
-                      i += 1
-                      continue
-                  marker = data[i+1]
-                  i += 2
-                  if marker in (0xD8, 0xD9):
-                      continue
-                  if i + 2 > len(data):
-                      break
-                  seglen = struct.unpack('>H', data[i:i+2])[0]
-                  if marker in (0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF):
-                      h, w = struct.unpack('>HH', data[i+3:i+7])
-                      return w, h
-                  i += seglen
-              raise SystemExit(f'{path}: dimensions not found')
+              if len(data) < 30 or data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+                  raise SystemExit(f'{path}: not a WebP image')
+              chunk = data[12:16]
+              if chunk == b'VP8X':
+                  w = 1 + int.from_bytes(data[24:27], 'little')
+                  h = 1 + int.from_bytes(data[27:30], 'little')
+                  return w, h
+              if chunk == b'VP8 ':
+                  payload = data[20:]
+                  sig = payload.find(b'\x9d\x01\x2a')
+                  if sig < 0 or sig + 7 > len(payload):
+                      raise SystemExit(f'{path}: VP8 dimensions not found')
+                  w = struct.unpack('<H', payload[sig+3:sig+5])[0] & 0x3FFF
+                  h = struct.unpack('<H', payload[sig+5:sig+7])[0] & 0x3FFF
+                  return w, h
+              if chunk == b'VP8L':
+                  payload = data[20:25]
+                  if len(payload) < 5 or payload[0] != 0x2F:
+                      raise SystemExit(f'{path}: VP8L dimensions not found')
+                  b0, b1, b2, b3 = payload[1:5]
+                  w = 1 + b0 + ((b1 & 0x3F) << 8)
+                  h = 1 + ((b1 & 0xC0) >> 6) + (b2 << 2) + ((b3 & 0x0F) << 10)
+                  return w, h
+              raise SystemExit(f'{path}: unsupported WebP chunk {chunk!r}')
 
-          for p in ['assets/pangur-ban/01.jpg', 'assets/pangur-ban/02.jpg']:
-              w, h = jpeg_size(p)
+          for p in ['assets/pangur-ban/01.webp', 'assets/pangur-ban/02.webp']:
+              w, h = webp_size(p)
               size = Path(p).stat().st_size
               print(f'{p}: {w}x{h}, {size} bytes')
               if w < 400 or h < 300 or size < 25000:
@@ -83,7 +88,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/pangur-ban/01.jpg assets/pangur-ban/02.jpg
+          git add assets/pangur-ban/01.webp assets/pangur-ban/02.webp
           if ! git diff --cached --quiet; then
             git commit -m 'Archive daily literary cat images: Pangur Ban'
             git push
