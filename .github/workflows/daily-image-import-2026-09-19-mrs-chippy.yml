@@ -1,0 +1,90 @@
+name: Import daily literary cat images - Mrs Chippy
+
+on:
+  push:
+    paths:
+      - '.github/workflows/daily-image-import-2026-09-19-mrs-chippy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download locked visual references
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/mrs-chippy
+
+          download() {
+            local url="$1"
+            local out="$2"
+            local referer="$3"
+            curl --fail --location --retry 4 --retry-all-errors \
+              -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36' \
+              -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8' \
+              -e "$referer" \
+              "$url" -o "$out"
+            test -s "$out"
+            file "$out"
+          }
+
+          download \
+            'https://upload.wikimedia.org/wikipedia/commons/0/0b/Welsh_sailor_and_stowaway_Perce_Blackborow_and_Mrs_Chippy.jpg' \
+            'assets/mrs-chippy/01.jpg' \
+            'https://commons.wikimedia.org/wiki/File:Welsh_sailor_and_stowaway_Perce_Blackborow_and_Mrs_Chippy.jpg'
+
+          download \
+            'https://upload.wikimedia.org/wikipedia/commons/d/d1/Harry_McNeish_Gravestone_cat.jpg' \
+            'assets/mrs-chippy/02.jpg' \
+            'https://commons.wikimedia.org/wiki/File:Harry_McNeish_Gravestone_cat.jpg'
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import struct
+
+          def jpeg_size(path):
+              data = Path(path).read_bytes()
+              if not data.startswith(b'\xff\xd8'):
+                  raise SystemExit(f'{path}: not a JPEG')
+              i = 2
+              while i + 9 < len(data):
+                  if data[i] != 0xFF:
+                      i += 1
+                      continue
+                  marker = data[i+1]
+                  i += 2
+                  if marker in (0xD8, 0xD9):
+                      continue
+                  if i + 2 > len(data):
+                      break
+                  seglen = struct.unpack('>H', data[i:i+2])[0]
+                  if marker in (0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF):
+                      h, w = struct.unpack('>HH', data[i+3:i+7])
+                      return w, h
+                  i += seglen
+              raise SystemExit(f'{path}: dimensions not found')
+
+          for p in ['assets/mrs-chippy/01.jpg', 'assets/mrs-chippy/02.jpg']:
+              w, h = jpeg_size(p)
+              size = Path(p).stat().st_size
+              print(f'{p}: {w}x{h}, {size} bytes')
+              if w < 400 or h < 400 or size < 30000:
+                  raise SystemExit(f'{p}: image quality check failed')
+          PY
+
+      - name: Commit archived images only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/mrs-chippy/01.jpg assets/mrs-chippy/02.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive daily literary cat images: Mrs Chippy'
+            git push
+          fi
