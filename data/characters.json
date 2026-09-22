@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-09-22",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -40,6 +40,7 @@
     {"canonical_name":"Orlando the Marmalade Cat","aliases":["Orlando","Orlando the Cat"],"work":"Orlando the Marmalade Cat series","work_zh":"“Orlando the Marmalade Cat”系列","author":"Kathleen Hale","introduced_date":"2026-09-18","entry_path":"entries/2026-09-18-orlando-the-marmalade-cat.md","source":"scheduled_run"},
     {"canonical_name":"Mrs Chippy","aliases":["Mrs. Chippy","Mrs Chippie","Mrs. Chippie"],"work":"Mrs. Chippy's Last Expedition: The Remarkable Journal of Shackleton's Polar-Bound Cat","work_zh":"《Mrs. Chippy's Last Expedition》","author":"Caroline Alexander","introduced_date":"2026-09-19","entry_path":"entries/2026-09-19-mrs-chippy.md","source":"scheduled_run"},
     {"canonical_name":"Pangur Bán","aliases":["Pangur Ban","Pangur"],"work":"Pangur Bán","work_zh":"《Pangur Bán》（“僧侣与他的猫”）","author":"Anonymous Irish monk","introduced_date":"2026-09-20","entry_path":"entries/2026-09-20-pangur-ban.md","source":"scheduled_run"},
-    {"canonical_name":"Carbonel","aliases":["Carbonel the King of the Cats","Carbonel the King of Cats","Prince Carbonel"],"work":"Carbonel (Carbonel: The King of the Cats)","work_zh":"《Carbonel》（《Carbonel: The King of the Cats》）","author":"Barbara Sleigh","introduced_date":"2026-09-21","entry_path":"entries/2026-09-21-carbonel.md","source":"scheduled_run"}
+    {"canonical_name":"Carbonel","aliases":["Carbonel the King of the Cats","Carbonel the King of Cats","Prince Carbonel"],"work":"Carbonel (Carbonel: The King of the Cats)","work_zh":"《Carbonel》（《Carbonel: The King of the Cats》）","author":"Barbara Sleigh","introduced_date":"2026-09-21","entry_path":"entries/2026-09-21-carbonel.md","source":"scheduled_run"},
+    {"canonical_name":"Koko","aliases":["Kao K'o-Kung","Kao K’o-Kung","Koko the Siamese"],"work":"The Cat Who... series","work_zh":"“The Cat Who...”系列（首作《The Cat Who Could Read Backwards》）","author":"Lilian Jackson Braun","introduced_date":"2026-09-22","entry_path":"entries/2026-09-22-koko.md","source":"scheduled_run"}
   ]
 }
