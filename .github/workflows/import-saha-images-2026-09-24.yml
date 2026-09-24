@@ -1,0 +1,56 @@
+name: Import Saha images 2026-09-24
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-saha-images-2026-09-24.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download locked reference images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/saha
+          curl -L --fail --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0 (compatible; literary-cats-image-import/1.0)' \
+            -e 'https://www.livre-rare-book.com/book/28999787/095' \
+            'https://static.livre-rare-book.com/pictures/MIU/095_1.jpg' \
+            -o assets/saha/01.jpg
+          curl -L --fail --retry 3 --retry-delay 2 \
+            -A 'Mozilla/5.0 (compatible; literary-cats-image-import/1.0)' \
+            -e 'https://www.fnac.com/a139146/Sidonie-Gabrielle-Colette-La-Chatte' \
+            'https://static.fnac-static.com/multimedia/PE/Images/FR/NR/8a/1f/02/139146/1507-1/tsp20250102083314/La-Chatte.jpg' \
+            -o assets/saha/02.jpg
+
+      - name: Verify downloaded files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s assets/saha/01.jpg
+          test -s assets/saha/02.jpg
+          file assets/saha/01.jpg
+          file assets/saha/02.jpg
+          stat -c '%n %s bytes' assets/saha/01.jpg assets/saha/02.jpg
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/saha/01.jpg assets/saha/02.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit.'
+          else
+            git commit -m 'Import Saha reference images'
+            git push
+          fi
