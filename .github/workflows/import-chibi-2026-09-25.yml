@@ -19,17 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Inspect image-source attributes without modifying repository content
+      - name: Install browser-compatible HTTP client
+        run: python -m pip install --quiet curl_cffi
+      - name: Read public illustration image metadata
         shell: bash
         run: |
           python - <<'PY'
           import re
-          import urllib.request
           from html import unescape
+          from curl_cffi import requests
           url = 'https://creativepool.com/davidhoweillustration/projects/the-guest-cat'
-          request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-          with urllib.request.urlopen(request, timeout=40) as response:
-              html = response.read().decode('utf-8')
+          response = requests.get(url, impersonate='chrome', timeout=45)
+          print('SOURCE_HTTP_STATUS', response.status_code)
+          response.raise_for_status()
+          html = response.text
           for tag in re.findall(r'<[^>]+>', html):
               if '/portfolio/' in tag or '1361198' in tag:
                   print('SOURCE_IMAGE_METADATA', unescape(tag), flush=True)
