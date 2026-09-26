@@ -1,0 +1,22 @@
+name: Verify Beppo workflow access 2026-09-26
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/verify-workflow-access-beppo-2026-09-26.yml'
+
+permissions: {}
+
+jobs:
+  verify:
+    name: Harmless workflow creation check
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm runner execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' 'beppo-workflow-access-probe-ok'
