@@ -3,3 +3,4 @@ dist/
 .cloudflare/
 .astro/
 .DS_Store
+.local-state/

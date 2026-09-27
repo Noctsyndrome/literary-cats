@@ -17,6 +17,13 @@ Write README and this guide in English. Preserve literal Chinese UI strings and 
 
 The site reads the archive directly rather than maintaining a separate content database. Preserve the article, image, and index interfaces used by the daily task.
 
+## Local Daily Task
+
+- `TASK.local.md` defines the local daily content workflow; `EDITORIAL.md` remains the single source for editorial requirements. `TASK.cloud.md` preserves the previous cloud workflow for reference.
+- Daily runs use the existing project checkout on `main`, reuse dependencies, and do not create a worktree per run. Stop for unrelated changes or another active writer. Public task documentation uses repository-relative paths; machine-specific paths belong in private local task settings.
+- Prepare and validate images, the entry, and the index before publishing them in one complete Git commit. Download images locally without temporary GitHub Actions workflows.
+- `.local-state/` is ignored. Daily runs keep one short `run.md` and, only on failure, the latest `error.log`. Drafts and images stay in their final archive paths; use task conversations, Git history, and Actions for other evidence instead of duplicate files or per-command logs.
+
 ## Content Contracts and Parsing
 
 - Do not casually change index fields, article naming, or image directory structure. Each daily update should include the article, images, and index changes in one complete commit. Prepare the files before updating the index to avoid dangling records.
