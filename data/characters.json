@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-29",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -47,6 +47,7 @@
     {"canonical_name":"Chibi","aliases":["チビ","小小","Tinkerbell","铃铃"],"work":"猫の客","work_zh":"《稻妻小路的猫》","author":"Takashi Hiraide","introduced_date":"2026-09-25","entry_path":"entries/2026-09-25-chibi.md","source":"scheduled_run"},
     {"canonical_name":"Beppo","aliases":["Pepo"],"work":"Beppo (La cifra)","work_zh":"《Beppo》（收入诗集《La cifra》）","author":"Jorge Luis Borges","introduced_date":"2026-09-26","entry_path":"entries/2026-09-26-beppo.md","source":"claude_backfill"},
     {"canonical_name":"Mikeš","aliases":["Mikes","Mikesch","Kater Mikesch"],"work":"Mikeš (O Mikešovi)","work_zh":"《Mikeš》（旧版题《O Mikešovi》）","author":"Josef Lada","introduced_date":"2026-09-28","entry_path":"entries/2026-09-28-mikes.md","source":"scheduled_run"},
-    {"canonical_name":"Nana","aliases":["奈奈","娜娜","ナナ"],"work":"旅猫リポート","work_zh":"《旅猫日记》","author":"Hiro Arikawa","introduced_date":"2026-09-27","entry_path":"entries/2026-09-27-nana-travelling-cat.md","source":"chatgpt_backfill"}
+    {"canonical_name":"Nana","aliases":["奈奈","娜娜","ナナ"],"work":"旅猫リポート","work_zh":"《旅猫日记》","author":"Hiro Arikawa","introduced_date":"2026-09-27","entry_path":"entries/2026-09-27-nana-travelling-cat.md","source":"chatgpt_backfill"},
+    {"canonical_name":"Zorbas","aliases":["索尔巴斯","Zorba"],"work":"Historia de una gaviota y del gato que le enseñó a volar","work_zh":"《教海鸥飞翔的猫》","author":"Luis Sepúlveda","introduced_date":"2026-09-29","entry_path":"entries/2026-09-29-zorbas.md","source":"scheduled_run"}
   ]
 }
