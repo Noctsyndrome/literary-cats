@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-04",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -52,6 +52,7 @@
     {"canonical_name":"Findus","aliases":["菲菲","小猫菲菲"],"work":"Pettson and Findus series","work_zh":"“派老头和捣乱猫的开心故事”系列","author":"Sven Nordqvist","introduced_date":"2026-09-30","entry_path":"entries/2026-09-30-findus.md","source":"scheduled_run"},
     {"canonical_name":"Francis","aliases":[],"work":"Felidae","work_zh":"《Felidae》","author":"Akif Pirinçci","introduced_date":"2026-10-01","entry_path":"entries/2026-10-01-francis.md","source":"scheduled_run"},
     {"canonical_name":"Jiji","aliases":["吉吉","ジジ"],"work":"魔女の宅急便","work_zh":"《魔女宅急便》","author":"Eiko Kadono","introduced_date":"2026-10-02","entry_path":"entries/2026-10-02-jiji.md","source":"scheduled_run"},
-    {"canonical_name":"Varjak Paw","aliases":["Varjak","瓦杰克"],"work":"Varjak Paw","work_zh":"《功夫猫1·铁爪的传说》","author":"SF Said","introduced_date":"2026-10-03","entry_path":"entries/2026-10-03-varjak-paw.md","source":"scheduled_run"}
+    {"canonical_name":"Varjak Paw","aliases":["Varjak","瓦杰克"],"work":"Varjak Paw","work_zh":"《功夫猫1·铁爪的传说》","author":"SF Said","introduced_date":"2026-10-03","entry_path":"entries/2026-10-03-varjak-paw.md","source":"scheduled_run"},
+    {"canonical_name":"Tiger","aliases":["阿虎","トラ","Tora"],"work":"Hon o Mamorou to Suru Neko no Hanashi (The Cat Who Saved Books)","work_zh":"《守护书的猫》","author":"Sosuke Natsukawa","introduced_date":"2026-10-04","entry_path":"entries/2026-10-04-tora.md","source":"scheduled_run"}
   ]
 }
