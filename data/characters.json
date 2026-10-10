@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-09",
+  "updated_at": "2026-10-10",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -58,6 +58,7 @@
     {"canonical_name":"Kaspar","aliases":["Prince Kaspar Kandinsky","Kaspar Kandinsky"],"work":"Kaspar: Prince of Cats","work_zh":"《Kaspar: Prince of Cats》","author":"Michael Morpurgo","introduced_date":"2026-10-06","entry_path":"entries/2026-10-06-kaspar.md","source":"scheduled_run"},
     {"canonical_name":"Rudolf","aliases":["鲁道夫","ルドルフ","Rudolf the Black Cat"],"work":"Rudorufu to Ippaiattena","work_zh":"《鲁道夫和可多乐》","author":"Hiroshi Saito","introduced_date":"2026-10-07","entry_path":"entries/2026-10-07-rudolf.md","source":"scheduled_run"},
     {"canonical_name":"Matroskin","aliases":["Матроскин","Cat Matroskin","кот Матроскин"],"work":"Дядя Фёдор, пёс и кот","work_zh":"《Дядя Фёдор, пёс и кот》","author":"Eduard Uspensky","introduced_date":"2026-10-08","entry_path":"entries/2026-10-08-matroskin.md","source":"scheduled_run"},
-    {"canonical_name":"Maurice","aliases":["莫里斯","Amazing Maurice"],"work":"The Amazing Maurice and His Educated Rodents","work_zh":"《碟形世界：猫和少年魔笛手》","author":"Terry Pratchett","introduced_date":"2026-10-09","entry_path":"entries/2026-10-09-maurice.md","source":"scheduled_run"}
+    {"canonical_name":"Maurice","aliases":["莫里斯","Amazing Maurice"],"work":"The Amazing Maurice and His Educated Rodents","work_zh":"《碟形世界：猫和少年魔笛手》","author":"Terry Pratchett","introduced_date":"2026-10-09","entry_path":"entries/2026-10-09-maurice.md","source":"scheduled_run"},
+    {"canonical_name":"Minoes","aliases":["咪妮","Minnie","Minou"],"work":"Minoes","work_zh":"《猫女咪妮》","author":"Annie M.G. Schmidt","introduced_date":"2026-10-10","entry_path":"entries/2026-10-10-minoes.md","source":"scheduled_run"}
   ]
 }
