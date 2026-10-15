@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14",
+  "updated_at": "2026-10-15",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -63,6 +63,7 @@
     {"canonical_name":"Norton","aliases":["诺顿","Norton the Cat"],"work":"The Cat Who Went to Paris","work_zh":"《The Cat Who Went to Paris》","author":"Peter Gethers","introduced_date":"2026-10-11","entry_path":"entries/2026-10-11-norton.md","source":"scheduled_run"},
     {"canonical_name":"Lily","aliases":["莉莉","リリー","Lily the Cat"],"work":"Neko to Shōzō to Futari no Onna","work_zh":"《猫与庄造与两个女人》","author":"Jun'ichirō Tanizaki","introduced_date":"2026-10-12","entry_path":"entries/2026-10-12-lily-tanizaki.md","source":"scheduled_run"},
     {"canonical_name":"The Cat in the Hat","aliases":["Cat in the Hat","戴高帽的猫","戴帽子的猫"],"work":"The Cat in the Hat","work_zh":"《戴高帽的猫》","author":"Dr. Seuss","introduced_date":"2026-10-13","entry_path":"entries/2026-10-13-cat-in-the-hat.md","source":"scheduled_run"},
-    {"canonical_name":"Rroû","aliases":["Rrou"],"work":"Rroû","work_zh":"《Rroû》","author":"Maurice Genevoix","introduced_date":"2026-10-14","entry_path":"entries/2026-10-14-rrou.md","source":"scheduled_run"}
+    {"canonical_name":"Rroû","aliases":["Rrou"],"work":"Rroû","work_zh":"《Rroû》","author":"Maurice Genevoix","introduced_date":"2026-10-14","entry_path":"entries/2026-10-14-rrou.md","source":"scheduled_run"},
+    {"canonical_name":"Socks","aliases":["Ticky","Socks Bricker"],"work":"Socks","work_zh":"《Socks》","author":"Beverly Cleary","introduced_date":"2026-10-15","entry_path":"entries/2026-10-15-socks.md","source":"scheduled_run"}
   ]
 }
