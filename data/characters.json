@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-17",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -65,6 +65,7 @@
     {"canonical_name":"The Cat in the Hat","aliases":["Cat in the Hat","戴高帽的猫","戴帽子的猫"],"work":"The Cat in the Hat","work_zh":"《戴高帽的猫》","author":"Dr. Seuss","introduced_date":"2026-10-13","entry_path":"entries/2026-10-13-cat-in-the-hat.md","source":"scheduled_run"},
     {"canonical_name":"Rroû","aliases":["Rrou"],"work":"Rroû","work_zh":"《Rroû》","author":"Maurice Genevoix","introduced_date":"2026-10-14","entry_path":"entries/2026-10-14-rrou.md","source":"scheduled_run"},
     {"canonical_name":"Socks","aliases":["Ticky","Socks Bricker"],"work":"Socks","work_zh":"《Socks》","author":"Beverly Cleary","introduced_date":"2026-10-15","entry_path":"entries/2026-10-15-socks.md","source":"scheduled_run"},
-    {"canonical_name":"Tao","aliases":["Tao the Siamese cat"],"work":"The Incredible Journey","work_zh":"《The Incredible Journey》","author":"Sheila Burnford","introduced_date":"2026-10-16","entry_path":"entries/2026-10-16-tao-incredible-journey.md","source":"scheduled_run"}
+    {"canonical_name":"Tao","aliases":["Tao the Siamese cat"],"work":"The Incredible Journey","work_zh":"《The Incredible Journey》","author":"Sheila Burnford","introduced_date":"2026-10-16","entry_path":"entries/2026-10-16-tao-incredible-journey.md","source":"scheduled_run"},
+    {"canonical_name":"Pelle Svanslös","aliases":["Pelle","Pelle No-Tail","Peter-No-Tail","派勒","无尾猫派勒"],"work":"Pelle Svanslös series","work_zh":"“无尾猫派勒”系列","author":"Gösta Knutsson","introduced_date":"2026-10-17","entry_path":"entries/2026-10-17-pelle-svanslos.md","source":"scheduled_run"}
   ]
 }
