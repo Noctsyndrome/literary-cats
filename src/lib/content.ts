@@ -133,3 +133,34 @@ export function withBase(path = '') {
 export function formatDate(date: string) {
   return date.replaceAll('-', '.');
 }
+
+export const tagGroups = [
+  { key: 'language', label: '语言' },
+  { key: 'form', label: '体裁' },
+  { key: 'coat', label: '花色' },
+  { key: 'sex', label: '性别' },
+] as const;
+
+export type TagKey = (typeof tagGroups)[number]['key'];
+
+export function tagValues(entry: CharacterRecord, key: TagKey) {
+  const value = entry[key];
+  return Array.isArray(value) ? value : [value];
+}
+
+export function tagLabel(key: TagKey, value: string) {
+  if (key !== 'sex') return value;
+  return { 公: '公猫', 母: '母猫', 未提及: '未提及性别' }[value] || value;
+}
+
+export function tagFacets(entries: CharacterRecord[]) {
+  return tagGroups.map(({ key, label }) => {
+    const counts = new Map<string, number>();
+    for (const entry of entries) {
+      for (const value of tagValues(entry, key)) counts.set(value, (counts.get(value) || 0) + 1);
+    }
+    const values = [...counts].map(([value, count]) => ({ value, count, label: tagLabel(key, value) }));
+    values.sort((a, b) => b.count - a.count);
+    return { key, label, values };
+  });
+}

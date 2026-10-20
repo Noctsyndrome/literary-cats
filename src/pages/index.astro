@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatDate, getEntries, withBase } from '../lib/content';
+import { formatDate, getEntries, tagFacets, tagGroups, tagValues, withBase } from '../lib/content';
 
 const entries = getEntries();
+const facets = tagFacets(entries);
 const latest = entries[0];
 ---
 
@@ -29,7 +30,7 @@ const latest = entries[0];
     <div class="section-head">
       <div>
         <h2>所有猫角色</h2>
-        <p>{entries.length} 只猫</p>
+        <p id="cat-count" data-total={entries.length}>{entries.length} 只猫</p>
       </div>
       <label class="search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m16 16 5 5" /></svg>
@@ -38,12 +39,29 @@ const latest = entries[0];
       </label>
     </div>
 
+    <div class="filters" id="cat-filters" hidden>
+      {facets.map((facet) => (
+        <div class="filter-group" role="group" aria-label={facet.label}>
+          <span class="filter-label">{facet.label}</span>
+          <div class="filter-options">
+            {facet.values.map((option) => (
+              <button type="button" class="filter-chip" data-key={facet.key} data-value={option.value} aria-pressed="false">
+                {option.label}<span>{option.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+      <button type="button" class="filter-clear" id="filter-clear" hidden>清除筛选</button>
+    </div>
+
     <div class="cat-list" id="cat-list">
       {entries.map((entry, index) => (
         <article
           class="cat-item"
           data-layout={index % 8}
           data-search={`${entry.canonical_name} ${entry.aliases.join(' ')} ${entry.work} ${entry.work_zh} ${entry.author}`.toLowerCase()}
+          {...Object.fromEntries(tagGroups.map(({ key }) => [`data-${key}`, tagValues(entry, key).join('|')]))}
         >
           <a href={withBase(`cats/${entry.slug}`)}>
             <figure><img src={entry.cover} alt={entry.images[0]?.alt || entry.canonical_name} loading="lazy" /></figure>
@@ -73,18 +91,64 @@ const latest = entries[0];
     const input = document.querySelector<HTMLInputElement>('#cat-search');
     const items = [...document.querySelectorAll<HTMLElement>('.cat-item')];
     const empty = document.querySelector<HTMLElement>('#empty-state');
-    input?.addEventListener('input', () => {
-      const query = input.value.trim().toLowerCase();
+    const count = document.querySelector<HTMLElement>('#cat-count');
+    const filters = document.querySelector<HTMLElement>('#cat-filters');
+    const chips = [...document.querySelectorAll<HTMLButtonElement>('.filter-chip')];
+    const clear = document.querySelector<HTMLButtonElement>('#filter-clear');
+    const keys = ['language', 'form', 'coat', 'sex'];
+    const active = new Map<string, string>();
+
+    const params = new URLSearchParams(location.search);
+    for (const key of keys) {
+      const value = params.get(key);
+      if (value && chips.some((chip) => chip.dataset.key === key && chip.dataset.value === value)) active.set(key, value);
+    }
+
+    function syncUrl() {
+      const next = new URLSearchParams();
+      for (const [key, value] of active) next.set(key, value);
+      const query = next.toString();
+      history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+    }
+
+    function apply() {
+      const query = input?.value.trim().toLowerCase() || '';
       let visible = 0;
       for (const item of items) {
-        const match = !query || item.dataset.search?.includes(query);
+        const matchesText = !query || item.dataset.search?.includes(query);
+        const matchesTags = [...active].every(([key, value]) => (item.dataset[key] || '').split('|').includes(value));
+        const match = Boolean(matchesText && matchesTags);
         item.hidden = !match;
         if (match) {
           item.dataset.layout = String(visible % 8);
           visible += 1;
         }
       }
+      for (const chip of chips) chip.setAttribute('aria-pressed', String(active.get(chip.dataset.key || '') === chip.dataset.value));
+      if (clear) clear.hidden = active.size === 0;
       if (empty) empty.hidden = visible !== 0;
+      if (count) {
+        const total = count.dataset.total;
+        count.textContent = visible === items.length ? `${total} 只猫` : `${visible} / ${total} 只猫`;
+      }
+    }
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const key = chip.dataset.key || '';
+        if (active.get(key) === chip.dataset.value) active.delete(key);
+        else active.set(key, chip.dataset.value || '');
+        syncUrl();
+        apply();
+      });
+    }
+    clear?.addEventListener('click', () => {
+      active.clear();
+      syncUrl();
+      apply();
     });
+    input?.addEventListener('input', apply);
+    if (filters) filters.hidden = false;
+    apply();
   </script>
 </BaseLayout>

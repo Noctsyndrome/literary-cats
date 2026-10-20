@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatDate, getEntries, withBase, type CatEntry } from '../../lib/content';
+import { formatDate, getEntries, tagLabel, withBase, type CatEntry } from '../../lib/content';
 
 export function getStaticPaths() {
   // Follow the same newest-to-oldest order as the homepage, without wrapping.
@@ -51,6 +51,12 @@ const { entry, previous, next } = Astro.props;
           <div><dt>作者</dt><dd>{entry.author}</dd></div>
           <div><dt>作品</dt><dd>{entry.work_zh}</dd></div>
           <div><dt>原文</dt><dd>{entry.work}</dd></div>
+          <div><dt>语言</dt><dd><a href={`${withBase()}?language=${encodeURIComponent(entry.language)}#archive`}>{entry.language}</a></dd></div>
+          <div><dt>体裁</dt><dd><a href={`${withBase()}?form=${encodeURIComponent(entry.form)}#archive`}>{entry.form}</a></dd></div>
+          {entry.coat.length > 0 && (
+            <div><dt>花色</dt><dd>{entry.coat.map((value, i) => (<>{i > 0 && '、'}<a href={`${withBase()}?coat=${encodeURIComponent(value)}#archive`}>{value}</a></>))}</dd></div>
+          )}
+          <div><dt>性别</dt><dd><a href={`${withBase()}?sex=${encodeURIComponent(entry.sex)}#archive`}>{tagLabel('sex', entry.sex)}</a></dd></div>
           <div><dt>收录日期</dt><dd>{formatDate(entry.introduced_date)}</dd></div>
         </dl>
       </aside>
