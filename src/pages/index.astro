@@ -39,6 +39,14 @@ const latest = entries[0];
       </label>
     </div>
 
+    <div class="filter-bar" id="filter-bar" hidden>
+      <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="false" aria-controls="cat-filters">
+        筛选<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+      </button>
+      <span class="filter-summary" id="filter-summary"></span>
+      <button type="button" class="filter-clear" id="filter-clear" hidden>清除筛选</button>
+    </div>
+
     <div class="filters" id="cat-filters" hidden>
       {facets.map((facet) => (
         <div class="filter-group" role="group" aria-label={facet.label}>
@@ -52,7 +60,6 @@ const latest = entries[0];
           </div>
         </div>
       ))}
-      <button type="button" class="filter-clear" id="filter-clear" hidden>清除筛选</button>
     </div>
 
     <div class="cat-list" id="cat-list">
@@ -95,6 +102,9 @@ const latest = entries[0];
     const filters = document.querySelector<HTMLElement>('#cat-filters');
     const chips = [...document.querySelectorAll<HTMLButtonElement>('.filter-chip')];
     const clear = document.querySelector<HTMLButtonElement>('#filter-clear');
+    const bar = document.querySelector<HTMLElement>('#filter-bar');
+    const toggle = document.querySelector<HTMLButtonElement>('#filter-toggle');
+    const summary = document.querySelector<HTMLElement>('#filter-summary');
     const keys = ['language', 'form', 'coat', 'sex'];
     const active = new Map<string, string>();
 
@@ -126,6 +136,12 @@ const latest = entries[0];
       }
       for (const chip of chips) chip.setAttribute('aria-pressed', String(active.get(chip.dataset.key || '') === chip.dataset.value));
       if (clear) clear.hidden = active.size === 0;
+      if (summary) {
+        summary.textContent = chips
+          .filter((chip) => active.get(chip.dataset.key || '') === chip.dataset.value)
+          .map((chip) => chip.firstChild?.textContent?.trim())
+          .join(' · ');
+      }
       if (empty) empty.hidden = visible !== 0;
       if (count) {
         const total = count.dataset.total;
@@ -148,7 +164,12 @@ const latest = entries[0];
       apply();
     });
     input?.addEventListener('input', apply);
-    if (filters) filters.hidden = false;
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      if (filters) filters.hidden = !open;
+    });
+    if (bar) bar.hidden = false;
     apply();
   </script>
 </BaseLayout>
