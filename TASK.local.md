@@ -99,7 +99,7 @@ GitHub entry 文末增加“视觉参考”部分，用于记录每张图片的�
 
 如果当天只有一张有效图片，则按视觉资料部分规定的例外处理。
 
-更新 `data/characters.json` 时，应保持现有 JSON schema 和既有记录不变，只向 `characters` 数组追加一条符合现有字段结构的新记录。至少保持 `canonical_name`、`aliases`、`work`、`work_zh`、`author`、`introduced_date`、`entry_path`、`source` 字段，其中正常每日任务的 `source` 固定为 `scheduled_run`。
+更新 `data/characters.json` 时，应保持现有 JSON schema 和既有记录不变，只向 `characters` 数组追加一条符合现有字段结构的新记录。至少保持 `canonical_name`、`aliases`、`work`、`work_zh`、`author`、`language`、`form`、`coat`、`sex`、`introduced_date`、`entry_path`、`source` 字段，其中正常每日任务的 `source` 固定为 `scheduled_run`；`language`、`form`、`coat`、`sex` 按 `EDITORIAL.md` 第十三节填写，构建会检查它们的类型。
 
 只有最终的本地 index 步骤允许修改 `data/characters.json`。图片下载、图片修复和 entry 写入等其他步骤均不得修改该文件；未完整准备好的内容不能进入索引。索引在本地更新后，须与本次图片和 entry 一并校验、一次提交并推送，不单独提交图片、entry 或索引。
 

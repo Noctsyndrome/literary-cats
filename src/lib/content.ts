@@ -7,6 +7,10 @@ export type CharacterRecord = {
   work: string;
   work_zh: string;
   author: string;
+  language: string;
+  form: string;
+  coat: string[];
+  sex: string;
   introduced_date: string;
   entry_path: string;
   source: string;
@@ -57,7 +61,21 @@ function entrySlug(path: string) {
   return path.replace(/^entries\/\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
 }
 
+function assertTagFields(record: CharacterRecord) {
+  const isText = (value: unknown) => typeof value === 'string' && value.trim() !== '';
+  const problems = [
+    !isText(record.language) && 'language',
+    !isText(record.form) && 'form',
+    !(Array.isArray(record.coat) && record.coat.every(isText)) && 'coat',
+    !isText(record.sex) && 'sex',
+  ].filter(Boolean);
+  if (problems.length) {
+    throw new Error(`Invalid index fields for ${record.canonical_name}: ${problems.join(', ')}`);
+  }
+}
+
 function parseEntry(record: CharacterRecord): CatEntry {
+  assertTagFields(record);
   const rawKey = `../../${record.entry_path}`;
   const raw = entryFiles[rawKey];
   if (!raw) throw new Error(`Missing archive entry: ${record.entry_path}`);

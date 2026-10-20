@@ -8,7 +8,7 @@ Write README and this guide in English. Preserve literal Chinese UI strings and 
 
 - `entries/`: daily character articles named `YYYY-MM-DD-slug.md`.
 - `assets/<slug>/`: reference images for each entry, usually numbered `01`, `02`, and so on.
-- `data/characters.json`: the character index and deduplication source, linking article paths, collection dates, works, and authors.
+- `data/characters.json`: the character index and deduplication source, linking article paths, collection dates, works, and authors, plus the classification fields `language`, `form`, `coat`, and `sex` (schema version 2).
 - `src/lib/content.ts`: index loading, Markdown parsing, image resolution, and internal URL generation.
 - `src/pages/index.astro` and `src/pages/cats/[slug].astro`: the homepage and entry pages.
 - `src/layouts/BaseLayout.astro` and `src/styles/`: shared layout and styles.
@@ -31,7 +31,7 @@ The site reads the archive directly rather than maintaining a separate content d
 - Extracted reference images are rearranged on the entry page: the first appears before the body, and the second after it. Blank lines between the title and images must not change this layout.
 - The literal heading `### 视觉参考` separates the body from visual references. Preserve attribution, descriptions, and original links. Do not add standalone internal-path notes such as `本地文件：../assets/...`; Markdown image references themselves still use relative paths.
 - Display archived local images. When adding a format, check the asset glob in `content.ts`; it currently supports jpg, jpeg, png, gif, webp, and avif. Validate GIF build output and deployed resources, not just filenames.
-- Design around the stable fields that the daily task already produces. Do not require extra subtitles, introductions, or tags that are absent from the archive.
+- Design around the stable fields that the daily task already produces. Do not require extra subtitles, introductions, or tags that are absent from the archive. The classification fields `language`, `form`, `coat`, and `sex` are part of the index contract: values are open-ended and guided by `EDITORIAL.md` section 13, and `src/lib/content.ts` checks only their types, so filters must be built from the values actually present.
 - Entries are ordered newest first. "Previous cat" means the adjacent newer record; "Next cat" means the adjacent older record. Include collection dates, do not wrap between the endpoints, and never link an entry to itself.
 
 ## Local Development and Validation
