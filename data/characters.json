@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20",
+  "updated_at": "2026-10-21",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -69,6 +69,7 @@
     {"canonical_name":"Pelle Svanslös","aliases":["Pelle","Pelle No-Tail","Peter-No-Tail","派勒","无尾猫派勒"],"work":"Pelle Svanslös series","work_zh":"“无尾猫派勒”系列","author":"Gösta Knutsson","language":"瑞典语","form":"童话","coat":[],"sex":"公","introduced_date":"2026-10-17","entry_path":"entries/2026-10-17-pelle-svanslos.md","source":"scheduled_run"},
     {"canonical_name":"Nero Corleone","aliases":["Nero","尼禄","尼祿","黑猫尼禄","黑貓尼祿"],"work":"Nero Corleone","work_zh":"《黑猫尼禄》","author":"Elke Heidenreich","language":"德语","form":"小说","coat":["黑","白爪"],"sex":"公","introduced_date":"2026-10-18","entry_path":"entries/2026-10-18-nero-corleone.md","source":"scheduled_run"},
     {"canonical_name":"Alphonse","aliases":["阿尔丰斯","阿爾豐斯"],"work":"La Patte du chat (Les Contes du chat perché)","work_zh":"《La Patte du chat》（《捉猫故事集》）","author":"Marcel Aymé","language":"法语","form":"童话","coat":[],"sex":"公","introduced_date":"2026-10-19","entry_path":"entries/2026-10-19-alphonse.md","source":"scheduled_run"},
-    {"canonical_name":"Raminagrobis","aliases":["Grippeminaud"],"work":"Le Chat, la Belette et le Petit Lapin (Fables)","work_zh":"《猫、黄鼠狼和小兔子》（《拉封丹寓言》）","author":"Jean de La Fontaine","language":"法语","form":"寓言","coat":[],"sex":"未提及","introduced_date":"2026-10-20","entry_path":"entries/2026-10-20-raminagrobis.md","source":"scheduled_run"}
+    {"canonical_name":"Raminagrobis","aliases":["Grippeminaud"],"work":"Le Chat, la Belette et le Petit Lapin (Fables)","work_zh":"《猫、黄鼠狼和小兔子》（《拉封丹寓言》）","author":"Jean de La Fontaine","language":"法语","form":"寓言","coat":[],"sex":"未提及","introduced_date":"2026-10-20","entry_path":"entries/2026-10-20-raminagrobis.md","source":"scheduled_run"},
+    {"canonical_name":"Fritti Tailchaser","aliases":["Fritti","Tailchaser"],"work":"Tailchaser’s Song","work_zh":"《Tailchaser’s Song》","author":"Tad Williams","language":"英语","form":"小说","coat":["橘"],"sex":"公","introduced_date":"2026-10-21","entry_path":"entries/2026-10-21-fritti-tailchaser.md","source":"scheduled_run"}
   ]
 }
