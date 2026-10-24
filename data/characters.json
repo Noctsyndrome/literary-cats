@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-23",
+  "updated_at": "2026-10-24",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -72,6 +72,7 @@
     {"canonical_name":"Raminagrobis","aliases":["Grippeminaud"],"work":"Le Chat, la Belette et le Petit Lapin (Fables)","work_zh":"《猫、黄鼠狼和小兔子》（《拉封丹寓言》）","author":"Jean de La Fontaine","language":"法语","form":"寓言","coat":[],"sex":"未提及","introduced_date":"2026-10-20","entry_path":"entries/2026-10-20-raminagrobis.md","source":"scheduled_run"},
     {"canonical_name":"Fritti Tailchaser","aliases":["Fritti","Tailchaser"],"work":"Tailchaser’s Song","work_zh":"《Tailchaser’s Song》","author":"Tad Williams","language":"英语","form":"小说","coat":["橘"],"sex":"公","introduced_date":"2026-10-21","entry_path":"entries/2026-10-21-fritti-tailchaser.md","source":"scheduled_run"},
     {"canonical_name":"Spiegel","aliases":["Spiegelchen","Mirror"],"work":"Spiegel, das Kätzchen","work_zh":"《Spiegel, das Kätzchen》","author":"Gottfried Keller","language":"德语","form":"童话","coat":["灰","黑"],"sex":"公","introduced_date":"2026-10-22","entry_path":"entries/2026-10-22-spiegel.md","source":"scheduled_run"},
-    {"canonical_name":"The Cat That Lived a Million Times","aliases":["The Cat Who Lived a Million Times","活了100万次的猫","活了一百万次的猫","100万回生きたねこ","とらねこ"],"work":"100万回生きたねこ","work_zh":"《活了100万次的猫》","author":"Yoko Sano","language":"日语","form":"绘本","coat":["虎斑"],"sex":"公","introduced_date":"2026-10-23","entry_path":"entries/2026-10-23-million-times-cat.md","source":"scheduled_run"}
+    {"canonical_name":"The Cat That Lived a Million Times","aliases":["The Cat Who Lived a Million Times","活了100万次的猫","活了一百万次的猫","100万回生きたねこ","とらねこ"],"work":"100万回生きたねこ","work_zh":"《活了100万次的猫》","author":"Yoko Sano","language":"日语","form":"绘本","coat":["虎斑"],"sex":"公","introduced_date":"2026-10-23","entry_path":"entries/2026-10-23-million-times-cat.md","source":"scheduled_run"},
+    {"canonical_name":"Mowzer","aliases":["Mouser","Mowzer the Cat"],"work":"The Mousehole Cat","work_zh":"《The Mousehole Cat》","author":"Antonia Barber","language":"英语","form":"绘本","coat":[],"sex":"母","introduced_date":"2026-10-24","entry_path":"entries/2026-10-24-mowzer.md","source":"scheduled_run"}
   ]
 }
