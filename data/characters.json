@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-26",
+  "updated_at": "2026-10-27",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -75,6 +75,7 @@
     {"canonical_name":"The Cat That Lived a Million Times","aliases":["The Cat Who Lived a Million Times","活了100万次的猫","活了一百万次的猫","100万回生きたねこ","とらねこ"],"work":"100万回生きたねこ","work_zh":"《活了100万次的猫》","author":"Yoko Sano","language":"日语","form":"绘本","coat":["虎斑"],"sex":"公","introduced_date":"2026-10-23","entry_path":"entries/2026-10-23-million-times-cat.md","source":"scheduled_run"},
     {"canonical_name":"Mowzer","aliases":["Mouser","Mowzer the Cat"],"work":"The Mousehole Cat","work_zh":"《The Mousehole Cat》","author":"Antonia Barber","language":"英语","form":"绘本","coat":[],"sex":"母","introduced_date":"2026-10-24","entry_path":"entries/2026-10-24-mowzer.md","source":"scheduled_run"},
     {"canonical_name":"Skimbleshanks","aliases":["Skimble","The Railway Cat","Skimbleshanks the Railway Cat"],"work":"Skimbleshanks: The Railway Cat (Old Possum’s Book of Practical Cats)","work_zh":"《Skimbleshanks: The Railway Cat》（《老负鼠的实用猫经》）","author":"T. S. Eliot","language":"英语","form":"诗歌","coat":["棕尾"],"sex":"公","introduced_date":"2026-10-25","entry_path":"entries/2026-10-25-skimbleshanks.md","source":"scheduled_run"},
-    {"canonical_name":"Mix","aliases":["小米","Mix the Cat"],"work":"Historia de Mix, de Max y de Mex","work_zh":"《小米、小马和小墨》","author":"Luis Sepúlveda","language":"西班牙语","form":"童话","coat":["黑","白胸"],"sex":"公","introduced_date":"2026-10-26","entry_path":"entries/2026-10-26-mix.md","source":"scheduled_run"}
+    {"canonical_name":"Mix","aliases":["小米","Mix the Cat"],"work":"Historia de Mix, de Max y de Mex","work_zh":"《小米、小马和小墨》","author":"Luis Sepúlveda","language":"西班牙语","form":"童话","coat":["黑","白胸"],"sex":"公","introduced_date":"2026-10-26","entry_path":"entries/2026-10-26-mix.md","source":"scheduled_run"},
+    {"canonical_name":"とらねこ大将","aliases":["とらねこたいしょう","Toraneko Taishō","Toraneko Taisho","虎猫大将","猫老大"],"work":"11ぴきのねこ","work_zh":"《11只猫》","author":"馬場のぼる","language":"日语","form":"绘本","coat":["蓝紫","虎斑","白腹"],"sex":"未提及","introduced_date":"2026-10-27","entry_path":"entries/2026-10-27-toraneko-taisho.md","source":"scheduled_run"}
   ]
 }
