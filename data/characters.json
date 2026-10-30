@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-10-30",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -78,6 +78,7 @@
     {"canonical_name":"Mix","aliases":["小米","Mix the Cat"],"work":"Historia de Mix, de Max y de Mex","work_zh":"《小米、小马和小墨》","author":"Luis Sepúlveda","language":"西班牙语","form":"童话","coat":["黑","白胸"],"sex":"公","introduced_date":"2026-10-26","entry_path":"entries/2026-10-26-mix.md","source":"scheduled_run"},
     {"canonical_name":"とらねこ大将","aliases":["とらねこたいしょう","Toraneko Taishō","Toraneko Taisho","虎猫大将","猫老大"],"work":"11ぴきのねこ","work_zh":"《11只猫》","author":"馬場のぼる","language":"日语","form":"绘本","coat":["蓝紫","虎斑","白腹"],"sex":"未提及","introduced_date":"2026-10-27","entry_path":"entries/2026-10-27-toraneko-taisho.md","source":"scheduled_run"},
     {"canonical_name":"Il Gatto","aliases":["Gatto","《木偶奇遇记》中的猫"],"work":"Le avventure di Pinocchio","work_zh":"《木偶奇遇记》","author":"Carlo Collodi","language":"意大利语","form":"童话","coat":[],"sex":"公","introduced_date":"2026-10-28","entry_path":"entries/2026-10-28-pinocchio-cat.md","source":"scheduled_run"},
-    {"canonical_name":"Sid","aliases":["席德","Six Dinner Sid","Six-Dinner Sid"],"work":"Six Dinner Sid","work_zh":"《吃六顿晚餐的猫》","author":"Inga Moore","language":"英语","form":"绘本","coat":["黑"],"sex":"公","introduced_date":"2026-10-29","entry_path":"entries/2026-10-29-sid.md","source":"scheduled_run"}
+    {"canonical_name":"Sid","aliases":["席德","Six Dinner Sid","Six-Dinner Sid"],"work":"Six Dinner Sid","work_zh":"《吃六顿晚餐的猫》","author":"Inga Moore","language":"英语","form":"绘本","coat":["黑"],"sex":"公","introduced_date":"2026-10-29","entry_path":"entries/2026-10-29-sid.md","source":"scheduled_run"},
+    {"canonical_name":"Beauty","aliases":["Miss Beauty"],"work":"Peines de cœur d’une chatte anglaise","work_zh":"《一只英国猫的苦难》","author":"Honoré de Balzac","language":"法语","form":"小说","coat":["白"],"sex":"母","introduced_date":"2026-10-30","entry_path":"entries/2026-10-30-beauty.md","source":"scheduled_run"}
   ]
 }
