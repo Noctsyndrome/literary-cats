@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-04",
+  "updated_at": "2026-11-05",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -84,6 +84,7 @@
     {"canonical_name":"Tabby McTat","aliases":[],"work":"Tabby McTat","work_zh":"《多喵快乐》","author":"Julia Donaldson","language":"英语","form":"绘本","coat":["虎斑"],"sex":"公","introduced_date":"2026-11-01","entry_path":"entries/2026-11-01-tabby-mctat.md","source":"scheduled_run"},
     {"canonical_name":"山猫","aliases":["Yamaneko","山ねこ","《橡子与山猫》中的山猫"],"work":"どんぐりと山猫","work_zh":"《橡子与山猫》","author":"Kenji Miyazawa","language":"日语","form":"童话","coat":[],"sex":"未提及","introduced_date":"2026-11-02","entry_path":"entries/2026-11-02-yamaneko.md","source":"scheduled_run"},
     {"canonical_name":"Katinka","aliases":[],"work":"Katinka’s Tail","work_zh":"《Katinka’s Tail》","author":"Judith Kerr","language":"英语","form":"绘本","coat":["白","虎斑尾"],"sex":"母","introduced_date":"2026-11-03","entry_path":"entries/2026-11-03-katinka.md","source":"scheduled_run"},
-    {"canonical_name":"Miss Moppet","aliases":["Moppet"],"work":"The Story of Miss Moppet","work_zh":"《The Story of Miss Moppet》","author":"Beatrix Potter","language":"英语","form":"绘本","coat":["虎斑"],"sex":"母","introduced_date":"2026-11-04","entry_path":"entries/2026-11-04-miss-moppet.md","source":"scheduled_run"}
+    {"canonical_name":"Miss Moppet","aliases":["Moppet"],"work":"The Story of Miss Moppet","work_zh":"《The Story of Miss Moppet》","author":"Beatrix Potter","language":"英语","form":"绘本","coat":["虎斑"],"sex":"母","introduced_date":"2026-11-04","entry_path":"entries/2026-11-04-miss-moppet.md","source":"scheduled_run"},
+    {"canonical_name":"Cat Ivanovitch","aliases":["Котофей Иванович","Kotofei Ivanovitch","Kotofey Ivanovich"],"work":"The Cat Who Became Head-Forester","work_zh":"《The Cat Who Became Head-Forester》","author":"Arthur Ransome","language":"英语","form":"民间故事","coat":[],"sex":"公","introduced_date":"2026-11-05","entry_path":"entries/2026-11-05-cat-ivanovitch.md","source":"scheduled_run"}
   ]
 }
