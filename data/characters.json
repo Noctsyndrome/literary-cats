@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -91,6 +91,7 @@
     {"canonical_name":"Tabby","aliases":["Tabby the Cat","虎斑猫（普特先生和虎斑猫）"],"work":"Mr. Putter & Tabby","work_zh":"《普特先生和虎斑猫》","author":"Cynthia Rylant","language":"英语","form":"小说","coat":["橘"],"sex":"母","introduced_date":"2026-11-08","entry_path":"entries/2026-11-08-tabby.md","source":"scheduled_run"},
     {"canonical_name":"깜냥","aliases":["黑喵","Ggamnyang"],"work":"고양이 해결사 깜냥","work_zh":"《问题终结者黑喵》","author":"洪旼静","language":"韩语","form":"童话","coat":["黑","白"],"sex":"未提及","introduced_date":"2026-11-09","entry_path":"entries/2026-11-09-ggamnyang.md","source":"scheduled_run"},
     {"canonical_name":"白象","aliases":[],"work":"白象","work_zh":"《白象》","author":"丰子恺","language":"中文","form":"散文","coat":["白"],"sex":"母","introduced_date":"2026-11-10","entry_path":"entries/2026-11-10-baixiang.md","source":"scheduled_run"},
-    {"canonical_name":"Васька","aliases":["瓦西卡","Vaska","Vas'ka","Кот-Васька","Васька-Кот"],"work":"Кот и Повар","work_zh":"《猫和厨师》","author":"Ivan Krylov","language":"俄语","form":"寓言","coat":[],"sex":"公","introduced_date":"2026-11-11","entry_path":"entries/2026-11-11-vaska-krylov.md","source":"scheduled_run"}
+    {"canonical_name":"Васька","aliases":["瓦西卡","Vaska","Vas'ka","Кот-Васька","Васька-Кот"],"work":"Кот и Повар","work_zh":"《猫和厨师》","author":"Ivan Krylov","language":"俄语","form":"寓言","coat":[],"sex":"公","introduced_date":"2026-11-11","entry_path":"entries/2026-11-11-vaska-krylov.md","source":"scheduled_run"},
+    {"canonical_name":"Bangs","aliases":["邦斯"],"work":"Sam, Bangs & Moonshine","work_zh":"《莎莎的月光》","author":"Evaline Ness","language":"英语","form":"绘本","coat":["黑"],"sex":"公","introduced_date":"2026-11-12","entry_path":"entries/2026-11-12-bangs.md","source":"scheduled_run"}
   ]
 }
