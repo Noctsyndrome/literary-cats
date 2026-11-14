@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-14",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -93,6 +93,7 @@
     {"canonical_name":"白象","aliases":[],"work":"白象","work_zh":"《白象》","author":"丰子恺","language":"中文","form":"散文","coat":["白"],"sex":"母","introduced_date":"2026-11-10","entry_path":"entries/2026-11-10-baixiang.md","source":"scheduled_run"},
     {"canonical_name":"Васька","aliases":["瓦西卡","Vaska","Vas'ka","Кот-Васька","Васька-Кот"],"work":"Кот и Повар","work_zh":"《猫和厨师》","author":"Ivan Krylov","language":"俄语","form":"寓言","coat":[],"sex":"公","introduced_date":"2026-11-11","entry_path":"entries/2026-11-11-vaska-krylov.md","source":"scheduled_run"},
     {"canonical_name":"Bangs","aliases":["邦斯"],"work":"Sam, Bangs & Moonshine","work_zh":"《莎莎的月光》","author":"Evaline Ness","language":"英语","form":"绘本","coat":["黑"],"sex":"公","introduced_date":"2026-11-12","entry_path":"entries/2026-11-12-bangs.md","source":"scheduled_run"},
-    {"canonical_name":"ねこ（《ねこざかな》）","aliases":["Nekozakana"],"work":"ねこざかな","work_zh":"《ねこざかな》","author":"わたなべゆういち","language":"日语","form":"绘本","coat":["黄","虎斑","白嘴"],"sex":"未提及","introduced_date":"2026-11-13","entry_path":"entries/2026-11-13-nekozakana.md","source":"scheduled_run"}
+    {"canonical_name":"ねこ（《ねこざかな》）","aliases":["Nekozakana"],"work":"ねこざかな","work_zh":"《ねこざかな》","author":"わたなべゆういち","language":"日语","form":"绘本","coat":["黄","虎斑","白嘴"],"sex":"未提及","introduced_date":"2026-11-13","entry_path":"entries/2026-11-13-nekozakana.md","source":"scheduled_run"},
+    {"canonical_name":"Die Katze (Die Bremer Stadtmusikanten)","aliases":["Bartputzer","《不来梅的音乐家》里的老猫","The Cat (Town Musicians of Bremen)"],"work":"Die Bremer Stadtmusikanten","work_zh":"《不来梅的音乐家》","author":"Brüder Grimm","language":"德语","form":"民间故事","coat":[],"sex":"未提及","introduced_date":"2026-11-14","entry_path":"entries/2026-11-14-bremen-town-musicians-cat.md","source":"scheduled_run"}
   ]
 }
