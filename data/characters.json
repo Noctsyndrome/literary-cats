@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-19",
+  "updated_at": "2026-11-20",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -99,6 +99,7 @@
     {"canonical_name":"かま猫","aliases":["竃猫","竈猫","灶猫","偎灶貓","灶坑猫","Kama-neko"],"work":"猫の事務所","work_zh":"《猫咪事务所》","author":"Kenji Miyazawa","language":"日语","form":"童话","coat":[],"sex":"未提及","introduced_date":"2026-11-16","entry_path":"entries/2026-11-16-kama-neko.md","source":"scheduled_run"},
     {"canonical_name":"Filemon","aliases":["Kot Filemon"],"work":"Przygody kota Filemona","work_zh":"《Przygody kota Filemona》","author":"Sławomir Grabowski and Marek Nejman","language":"波兰语","form":"童话","coat":["白","耳后黑斑"],"sex":"公","introduced_date":"2026-11-17","entry_path":"entries/2026-11-17-filemon.md","source":"scheduled_run"},
     {"canonical_name":"Old Deuteronomy","aliases":["老杜特洛诺米","老杜特洛諾米","长老猫","長老貓","年老的丢特洛诺米"],"work":"Old Deuteronomy (Old Possum’s Book of Practical Cats)","work_zh":"《老杜特洛诺米》（《老负鼠的猫经》）","author":"T. S. Eliot","language":"英语","form":"诗歌","coat":[],"sex":"公","introduced_date":"2026-11-18","entry_path":"entries/2026-11-18-old-deuteronomy.md","source":"scheduled_run"},
-    {"canonical_name":"Jennie","aliases":["Jennie Baldrin","珍妮","珍妮·鲍德霖"],"work":"Jennie","work_zh":"《珍妮》","author":"Paul Gallico","language":"英语","form":"小说","coat":["虎斑","白脸","白喉"],"sex":"母","introduced_date":"2026-11-19","entry_path":"entries/2026-11-19-jennie.md","source":"scheduled_run"}
+    {"canonical_name":"Jennie","aliases":["Jennie Baldrin","珍妮","珍妮·鲍德霖"],"work":"Jennie","work_zh":"《珍妮》","author":"Paul Gallico","language":"英语","form":"小说","coat":["虎斑","白脸","白喉"],"sex":"母","introduced_date":"2026-11-19","entry_path":"entries/2026-11-19-jennie.md","source":"scheduled_run"},
+    {"canonical_name":"ノンタン","aliases":["Nontan"],"work":"ノンタン あそぼうよ","work_zh":"《ノンタン》系列","author":"Sachiko Kiyono","language":"日语","form":"绘本","coat":["白"],"sex":"公","introduced_date":"2026-11-20","entry_path":"entries/2026-11-20-nontan.md","source":"scheduled_run"}
   ]
 }
