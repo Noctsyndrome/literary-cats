@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-24",
+  "updated_at": "2026-11-25",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -104,6 +104,7 @@
     {"canonical_name":"Tuffy","aliases":["塔菲","Killer Cat"],"work":"The Diary of a Killer Cat","work_zh":"《杀手猫日记》","author":"Anne Fine","language":"英语","form":"小说","coat":[],"sex":"公","introduced_date":"2026-11-21","entry_path":"entries/2026-11-21-tuffy.md","source":"scheduled_run"},
     {"canonical_name":"Splat","aliases":["Splat the Cat","啪嗒猫","啪哒猫"],"work":"Splat the Cat","work_zh":"《啪嗒猫第一天上学》","author":"Rob Scotton","language":"英语","form":"绘本","coat":["黑"],"sex":"公","introduced_date":"2026-11-22","entry_path":"entries/2026-11-22-splat.md","source":"scheduled_run"},
     {"canonical_name":"Le Chat (Le Paradis des chats)","aliases":["《猫的天堂》中的安哥拉猫","Le chat d’Angora","The Angora Cat (The Paradise of Cats)"],"work":"Le Paradis des chats","work_zh":"《猫的天堂》","author":"Émile Zola","language":"法语","form":"小说","coat":[],"sex":"公","introduced_date":"2026-11-23","entry_path":"entries/2026-11-23-paradis-des-chats.md","source":"scheduled_run"},
-    {"canonical_name":"Milton","aliases":[],"work":"Moi, Milton; Milton series","work_zh":"《Moi, Milton》；“Milton”系列","author":"Haydé Ardalan","language":"法语","form":"绘本","coat":["黑","白"],"sex":"公","introduced_date":"2026-11-24","entry_path":"entries/2026-11-24-milton.md","source":"scheduled_run"}
+    {"canonical_name":"Milton","aliases":[],"work":"Moi, Milton; Milton series","work_zh":"《Moi, Milton》；“Milton”系列","author":"Haydé Ardalan","language":"法语","form":"绘本","coat":["黑","白"],"sex":"公","introduced_date":"2026-11-24","entry_path":"entries/2026-11-24-milton.md","source":"scheduled_run"},
+    {"canonical_name":"Pinkle Purr","aliases":["Pinkle","Pink"],"work":"Pinkle Purr (Now We Are Six)","work_zh":"《Pinkle Purr》（《Now We Are Six》）","author":"A. A. Milne","language":"英语","form":"诗歌","coat":["黑"],"sex":"公","introduced_date":"2026-11-25","entry_path":"entries/2026-11-25-pinkle-purr.md","source":"scheduled_run"}
   ]
 }
