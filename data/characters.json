@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "notes": "The first twelve historical entries were reconstructed and rewritten on 2026-08-27 to match the current editorial rules. Their introduced_date values follow the original daily run sequence from 2026-08-15 through 2026-08-26. Future runs should append one record only after the corresponding entry file is written successfully.",
   "characters": [
     {"canonical_name":"Behemoth","aliases":["贝格莫特","别格莫特","Бегемот"],"work":"The Master and Margarita","work_zh":"《大师和玛格丽特》","author":"Mikhail Bulgakov","language":"俄语","form":"小说","coat":["黑"],"sex":"公","introduced_date":"2026-08-15","entry_path":"entries/2026-08-15-behemoth.md","source":"rewritten_historical_backfill"},
@@ -107,6 +107,7 @@
     {"canonical_name":"Milton","aliases":[],"work":"Moi, Milton; Milton series","work_zh":"《Moi, Milton》；“Milton”系列","author":"Haydé Ardalan","language":"法语","form":"绘本","coat":["黑","白"],"sex":"公","introduced_date":"2026-11-24","entry_path":"entries/2026-11-24-milton.md","source":"scheduled_run"},
     {"canonical_name":"Pinkle Purr","aliases":["Pinkle","Pink"],"work":"Pinkle Purr (Now We Are Six)","work_zh":"《Pinkle Purr》（《Now We Are Six》）","author":"A. A. Milne","language":"英语","form":"诗歌","coat":["黑"],"sex":"公","introduced_date":"2026-11-25","entry_path":"entries/2026-11-25-pinkle-purr.md","source":"scheduled_run"},
     {"canonical_name":"Gato Malhado","aliases":["花斑猫","O Gato Malhado"],"work":"O Gato Malhado e a Andorinha Sinhá","work_zh":"《花斑猫与燕子西尼娅》","author":"Jorge Amado","language":"葡萄牙语","form":"童话","coat":[],"sex":"公","introduced_date":"2026-11-26","entry_path":"entries/2026-11-26-gato-malhado.md","source":"scheduled_run"},
-    {"canonical_name":"くろねこかあさん","aliases":["黒猫かあさん","黑猫妈妈","Kuroneko Kaasan"],"work":"くろねこかあさん","work_zh":"《くろねこかあさん》","author":"Higashi Kunpei","language":"日语","form":"绘本","coat":["黑"],"sex":"母","introduced_date":"2026-11-27","entry_path":"entries/2026-11-27-kuroneko-kaasan.md","source":"scheduled_run"}
+    {"canonical_name":"くろねこかあさん","aliases":["黒猫かあさん","黑猫妈妈","Kuroneko Kaasan"],"work":"くろねこかあさん","work_zh":"《くろねこかあさん》","author":"Higashi Kunpei","language":"日语","form":"绘本","coat":["黑"],"sex":"母","introduced_date":"2026-11-27","entry_path":"entries/2026-11-27-kuroneko-kaasan.md","source":"scheduled_run"},
+    {"canonical_name":"Raton","aliases":["《猴子与猫》中的猫"],"work":"Le Singe et le Chat","work_zh":"《猴子与猫》","author":"Jean de La Fontaine","language":"法语","form":"寓言","coat":[],"sex":"公","introduced_date":"2026-11-28","entry_path":"entries/2026-11-28-raton.md","source":"scheduled_run"}
   ]
 }
